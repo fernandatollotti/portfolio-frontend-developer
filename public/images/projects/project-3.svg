@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <radialGradient id="g3" cx="30%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#1a1a21"/>
+      <stop offset="100%" stop-color="#0d0d11"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#g3)"/>
+  <path d="M0 700 Q 400 560 800 660 T 1600 620 V1000 H0 Z" fill="#dab061" opacity="0.06"/>
+  <circle cx="1300" cy="300" r="6" fill="#dab061"/>
+  <circle cx="1360" cy="360" r="4" fill="#dab061" opacity="0.6"/>
+  <circle cx="1240" cy="380" r="3" fill="#dab061" opacity="0.4"/>
+  <line x1="80" y1="820" x2="1520" y2="820" stroke="#26262d" stroke-width="1"/>
+  <text x="120" y="220" font-family="Arial, sans-serif" font-size="28" letter-spacing="6" fill="#a5a5a5">03</text>
+  <text x="120" y="480" font-family="Arial, sans-serif" font-size="64" font-weight="600" fill="#f5f5f5">Orbit</text>
+  <text x="120" y="540" font-family="Arial, sans-serif" font-size="64" font-weight="600" fill="#dab061">Landing</text>
+</svg>
