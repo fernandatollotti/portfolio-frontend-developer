@@ -2,7 +2,7 @@ import { Profile } from "@/types";
 
 /**
  * Placeholder content — replace every field with your real information.
- * This is the single source of truth for the sidebar, hero and contact section.
+ * This is the single source of truth for the sidebar and hero.
  */
 export const profile: Profile = {
   name: "Seu Nome",
@@ -18,7 +18,6 @@ export const profile: Profile = {
     "Acredito em evolução contínua: estudo constantemente novas ferramentas e boas práticas para entregar interfaces cada vez mais sólidas e bem construídas.",
   ],
   location: "Sua Cidade, Brasil",
-  availability: "Disponível para novos projetos",
   email: "seuemail@exemplo.com",
   socials: [
     { label: "GitHub", href: "https://github.com/seu-usuario", icon: "github" },

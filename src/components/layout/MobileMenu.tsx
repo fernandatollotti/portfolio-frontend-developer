@@ -32,7 +32,7 @@ export function MobileMenu() {
           aria-label="Abrir menu"
           aria-expanded={open}
           aria-controls="mobile-nav"
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-text"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-text transition-colors hover:border-accent hover:text-accent"
         >
           <Menu className="h-5 w-5" aria-hidden="true" />
         </button>
@@ -54,7 +54,7 @@ export function MobileMenu() {
             type="button"
             onClick={() => setOpen(false)}
             aria-label="Fechar menu"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-text"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-text transition-colors hover:border-accent hover:text-accent"
           >
             <X className="h-5 w-5" aria-hidden="true" />
           </button>

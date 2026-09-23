@@ -12,7 +12,6 @@ export interface Profile {
   heroDescription: string;
   bio: string[];
   location: string;
-  availability: string;
   email: string;
   socials: SocialLink[];
   resumeUrl?: string;

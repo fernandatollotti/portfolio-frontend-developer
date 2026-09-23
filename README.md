@@ -36,24 +36,11 @@ especialmente os depoimentos e clientes, que não devem ser apresentados como re
 As imagens dos projetos (`public/images/projects/*.svg`) e o avatar (`public/images/avatar-placeholder.svg`)
 também são placeholders gerados — troque pelos seus prints/fotos reais (recomendado: `.webp` ou `.avif`).
 
-## Formulário de contato
+## Contato
 
-O endpoint `src/app/api/contact/route.ts` valida (client + server, via `zod`), sanitiza os campos,
-aplica um honeypot anti-spam e um rate limit por IP (5 envios/minuto por instância).
-
-Por padrão, sem nenhuma variável de ambiente configurada, os envios só são logados no console do
-servidor (útil em desenvolvimento). Para enviar e-mails de verdade, configure no `.env.local`
-(veja `.env.example`):
-
-```bash
-RESEND_API_KEY=...
-CONTACT_TO_EMAIL=voce@seudominio.com
-CONTACT_FROM_EMAIL="Portfólio <onboarding@resend.dev>"
-NEXT_PUBLIC_SITE_URL=https://seudominio.com
-```
-
-Usa a API da [Resend](https://resend.com) via `fetch` direto (sem SDK). Pode trocar por
-qualquer outro provedor (SendGrid, SMTP via Nodemailer etc.) editando essa rota.
+Não há mais uma seção/formulário de contato dedicado — o convite "Vamos conversar" (no hero, no
+card do perfil e no botão de chat flutuante) leva direto para `mailto:` com o e-mail definido em
+`src/data/profile.ts`, e os ícones sociais completam os outros canais.
 
 ## SEO
 

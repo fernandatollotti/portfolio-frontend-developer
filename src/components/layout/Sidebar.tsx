@@ -40,13 +40,6 @@ export function Sidebar() {
           ))}
         </nav>
 
-        <span className="absolute top-1/2 left-0 origin-left -translate-y-1/2 -rotate-90 pl-4 text-xs font-medium tracking-wide text-text-secondary">
-          <span className="inline-flex items-center gap-2 whitespace-nowrap">
-            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-            {profile.availability}
-          </span>
-        </span>
-
         <div className="absolute inset-x-6 bottom-6">
           <p className="text-sm text-text-secondary">Olá, eu sou</p>
           <h1 className="mt-1 font-heading text-2xl font-semibold text-text">{profile.name}</h1>
@@ -60,7 +53,7 @@ export function Sidebar() {
 
           <div className="flex flex-wrap items-center gap-3">
             <a
-              href="#contato"
+              href={`mailto:${profile.email}`}
               className="group inline-flex items-center gap-2 rounded-full bg-accent py-2.5 pr-2.5 pl-5 font-heading text-sm font-medium text-bg transition-colors hover:bg-accent/90"
             >
               Vamos conversar

@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { MessageCircle, X, Mail, ArrowRight } from "lucide-react";
+import { MessageCircle, X, Mail } from "lucide-react";
 import { profile } from "@/data/profile";
+import { SocialIcon } from "@/components/ui/SocialIcon";
 
 export function ChatButton() {
   const [open, setOpen] = useState(false);
@@ -38,24 +39,32 @@ export function ChatButton() {
         >
           <p className="font-heading text-sm font-semibold text-text">Vamos conversar?</p>
           <p className="mt-1 text-sm text-text-secondary">
-            Responder o quanto antes é prioridade. Escolha a melhor forma de contato:
+            Responder o quanto antes é prioridade. Me chame por e-mail ou pelas redes:
           </p>
-          <div className="mt-4 flex flex-col gap-2">
-            <a
-              href={`mailto:${profile.email}`}
-              className="inline-flex items-center gap-2 rounded-lg border border-border px-3 py-2 text-sm text-text transition-colors hover:border-accent hover:text-accent"
-            >
-              <Mail className="h-4 w-4" aria-hidden="true" />
-              Enviar e-mail
-            </a>
-            <a
-              href="#contato"
-              onClick={() => setOpen(false)}
-              className="inline-flex items-center gap-2 rounded-lg border border-border px-3 py-2 text-sm text-text transition-colors hover:border-accent hover:text-accent"
-            >
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              Ir para o formulário
-            </a>
+
+          <a
+            href={`mailto:${profile.email}`}
+            className="mt-4 inline-flex items-center gap-2 rounded-lg border border-border px-3 py-2 text-sm text-text transition-colors hover:border-accent hover:text-accent"
+          >
+            <Mail className="h-4 w-4" aria-hidden="true" />
+            {profile.email}
+          </a>
+
+          <div className="mt-4 flex items-center gap-2 border-t border-border pt-4">
+            {profile.socials
+              .filter((social) => social.icon !== "mail")
+              .map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target={social.href.startsWith("http") ? "_blank" : undefined}
+                  rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  aria-label={social.label}
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-text-secondary transition-colors hover:border-accent hover:text-accent"
+                >
+                  <SocialIcon icon={social.icon} className="h-4 w-4" />
+                </a>
+              ))}
           </div>
         </div>
       )}

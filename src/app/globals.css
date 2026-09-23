@@ -27,6 +27,27 @@
 
   --font-heading: var(--font-space-grotesk);
   --font-body: var(--font-inter);
+
+  --animate-scroll-dot: scroll-dot 1.8s ease-in-out infinite;
+
+  @keyframes scroll-dot {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    70% {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+    71% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 }
 
 * {

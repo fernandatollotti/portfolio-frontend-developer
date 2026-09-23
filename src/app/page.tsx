@@ -13,7 +13,6 @@ import { Services } from "@/components/sections/Services";
 import { Process } from "@/components/sections/Process";
 import { Technologies } from "@/components/sections/Technologies";
 import { Testimonials } from "@/components/sections/Testimonials";
-import { Contact } from "@/components/sections/Contact";
 
 export default function Home() {
   return (
@@ -24,7 +23,7 @@ export default function Home() {
         <Sidebar />
 
         <main id="main-content" className="min-w-0 flex-1 pt-20 lg:pt-0">
-          <Container className="max-w-3xl">
+          <Container className="max-w-5xl">
             <Hero />
             <Clients />
             <About />
@@ -34,7 +33,6 @@ export default function Home() {
             <Process />
             <Technologies />
             <Testimonials />
-            <Contact />
           </Container>
         </main>
 

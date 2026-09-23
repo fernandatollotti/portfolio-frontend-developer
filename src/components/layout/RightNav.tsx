@@ -27,7 +27,7 @@ export function RightNav() {
                   "flex h-11 w-11 items-center justify-center rounded-full border transition-colors",
                   isActive
                     ? "border-accent bg-accent-dim text-accent"
-                    : "border-transparent text-text-secondary hover:border-border hover:text-text"
+                    : "border-transparent text-text-secondary hover:border-accent hover:text-accent"
                 )}
               >
                 <Icon className="h-[18px] w-[18px]" aria-hidden="true" strokeWidth={1.75} />
