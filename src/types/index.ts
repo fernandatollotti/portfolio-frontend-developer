@@ -18,9 +18,22 @@ export interface Profile {
   resumeUrl?: string;
 }
 
+export type NavIcon =
+  | "home"
+  | "clients"
+  | "about"
+  | "experience"
+  | "projects"
+  | "services"
+  | "process"
+  | "technologies"
+  | "testimonials"
+  | "contact";
+
 export interface NavItem {
   id: string;
   label: string;
+  icon: NavIcon;
 }
 
 export interface Client {

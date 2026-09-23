@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import { navItems } from "@/data/nav";
 import { profile } from "@/data/profile";
 import { SocialIcon } from "@/components/ui/SocialIcon";
+import { navIconMap } from "@/components/layout/navIcons";
 import { useActiveSectionContext } from "@/components/layout/ActiveSectionProvider";
 import { cn } from "@/lib/utils";
 
@@ -62,6 +63,7 @@ export function MobileMenu() {
         <nav aria-label="Seções" className="mt-10 flex-1">
           <ul className="flex flex-col gap-1">
             {navItems.map((item) => {
+              const Icon = navIconMap[item.icon];
               const isActive = item.id === activeId;
               return (
                 <li key={item.id}>
@@ -70,10 +72,11 @@ export function MobileMenu() {
                     onClick={() => setOpen(false)}
                     aria-current={isActive ? "true" : undefined}
                     className={cn(
-                      "block border-b border-border py-4 font-heading text-lg",
+                      "flex items-center gap-4 border-b border-border py-4 font-heading text-lg",
                       isActive ? "text-accent" : "text-text"
                     )}
                   >
+                    <Icon className="h-5 w-5 shrink-0" aria-hidden="true" strokeWidth={1.75} />
                     {item.label}
                   </a>
                 </li>
