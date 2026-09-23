@@ -1,6 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
-  <rect width="160" height="160" fill="#15151b"/>
-  <circle cx="80" cy="64" r="30" fill="#26262d"/>
-  <path d="M20 150 C20 108 44 92 80 92 C116 92 140 108 140 150 Z" fill="#26262d"/>
-  <circle cx="80" cy="64" r="30" fill="none" stroke="#dab061" stroke-width="1.5" opacity="0.6"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 732">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a21"/>
+      <stop offset="100%" stop-color="#0d0d11"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="30%" r="45%">
+      <stop offset="0%" stop-color="#dab061" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#dab061" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="732" fill="url(#bg)"/>
+  <rect width="400" height="732" fill="url(#glow)"/>
+
+  <circle cx="200" cy="230" r="200" fill="none" stroke="#26262d" stroke-width="1"/>
+  <circle cx="200" cy="230" r="140" fill="none" stroke="#26262d" stroke-width="1"/>
+
+  <!-- silhouette -->
+  <circle cx="200" cy="215" r="82" fill="#20202a"/>
+  <path d="M40 732 C40 560 104 468 200 468 C296 468 360 560 360 732 Z" fill="#20202a"/>
+  <circle cx="200" cy="215" r="82" fill="none" stroke="#dab061" stroke-width="1.5" opacity="0.5"/>
 </svg>
