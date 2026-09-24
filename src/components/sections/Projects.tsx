@@ -2,6 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Reveal } from "@/components/ui/Reveal";
+import { projectDomId } from "@/lib/utils";
 
 export function Projects() {
   return (
@@ -19,16 +20,19 @@ export function Projects() {
         />
       </Reveal>
 
-      <div className="flex flex-col gap-20">
+      <div className="flex flex-col gap-16 lg:gap-24">
         {projects.map((project, index) => (
           <Reveal key={project.id} delay={index * 60}>
-            <article className="group">
+            <article
+              id={projectDomId(project.id)}
+              className="group grid scroll-mt-24 grid-cols-1 items-center gap-6 lg:grid-cols-2 lg:gap-10"
+            >
               <a
                 href={project.href ?? "#"}
                 className="block overflow-hidden rounded-2xl border border-border bg-bg-secondary"
                 aria-label={`Ver projeto ${project.name}`}
               >
-                <div className="relative aspect-[16/10] w-full overflow-hidden">
+                <div className="relative aspect-[4/3] w-full overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element -- static local SVG, no optimization needed */}
                   <img
                     src={project.image}
@@ -38,34 +42,20 @@ export function Projects() {
                 </div>
               </a>
 
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                <div>
-                  <p className="text-xs font-semibold tracking-[0.2em] text-accent uppercase">
-                    {project.category} · {project.year}
-                  </p>
-                  <h3 className="mt-2 font-heading text-2xl font-semibold text-text">
-                    {project.name}
-                  </h3>
-                  <p className="mt-2 max-w-lg text-sm leading-relaxed text-text-secondary">
-                    {project.description}
-                  </p>
-                  <p className="mt-2 text-xs text-text-muted">Papel: {project.role}</p>
-
-                  <ul className="mt-4 flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
-                      <li
-                        key={tech}
-                        className="rounded-full border border-border px-3 py-1 text-xs text-text-secondary"
-                      >
-                        {tech}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              <div>
+                <p className="text-xs font-semibold tracking-[0.2em] text-accent uppercase">
+                  {project.category} · {project.year}
+                </p>
+                <h3 className="mt-2 font-heading text-2xl font-semibold text-text">
+                  {project.name}
+                </h3>
+                <p className="mt-3 max-w-lg text-sm leading-relaxed text-text-secondary">
+                  {project.description}
+                </p>
 
                 <a
                   href={project.href ?? "#"}
-                  className="inline-flex shrink-0 items-center gap-1 font-heading text-sm font-medium text-text transition-colors hover:text-accent"
+                  className="mt-5 inline-flex items-center gap-1 font-heading text-sm font-medium text-text transition-colors hover:text-accent"
                 >
                   Ver projeto
                   <ArrowUpRight

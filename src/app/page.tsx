@@ -1,4 +1,5 @@
 import { ActiveSectionProvider } from "@/components/layout/ActiveSectionProvider";
+import { ActiveProjectProvider } from "@/components/layout/ActiveProjectProvider";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { RightNav } from "@/components/layout/RightNav";
 import { MobileMenu } from "@/components/layout/MobileMenu";
@@ -17,29 +18,31 @@ import { Testimonials } from "@/components/sections/Testimonials";
 export default function Home() {
   return (
     <ActiveSectionProvider>
-      <MobileMenu />
+      <ActiveProjectProvider>
+        <MobileMenu />
 
-      <div className="mx-auto flex w-full max-w-[1440px]">
-        <Sidebar />
+        <div className="mx-auto flex w-full max-w-[1440px]">
+          <Sidebar />
 
-        <main id="main-content" className="min-w-0 flex-1 pt-20 lg:pt-0">
-          <Container className="max-w-5xl">
-            <Hero />
-            <Clients />
-            <About />
-            <Experience />
-            <Projects />
-            <Services />
-            <Process />
-            <Technologies />
-            <Testimonials />
-          </Container>
-        </main>
+          <main id="main-content" className="min-w-0 flex-1 pt-20 lg:pt-0">
+            <Container className="max-w-5xl">
+              <Hero />
+              <Clients />
+              <About />
+              <Experience />
+              <Projects />
+              <Services />
+              <Process />
+              <Technologies />
+              <Testimonials />
+            </Container>
+          </main>
 
-        <RightNav />
-      </div>
+          <RightNav />
+        </div>
 
-      <ChatButton />
+        <ChatButton />
+      </ActiveProjectProvider>
     </ActiveSectionProvider>
   );
 }

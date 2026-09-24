@@ -1,6 +1,9 @@
+"use client";
+
 import { experience } from "@/data/experience";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Reveal } from "@/components/ui/Reveal";
+import { useScrollProgress } from "@/hooks/useScrollProgress";
 
 const typeLabel: Record<(typeof experience)[number]["type"], string> = {
   work: "Experiência profissional",
@@ -9,6 +12,8 @@ const typeLabel: Record<(typeof experience)[number]["type"], string> = {
 };
 
 export function Experience() {
+  const { ref, progress } = useScrollProgress<HTMLOListElement>();
+
   return (
     <section
       id="experiencia"
@@ -23,7 +28,14 @@ export function Experience() {
         />
       </Reveal>
 
-      <ol className="relative max-w-2xl border-l border-border pl-8">
+      <ol ref={ref} className="relative max-w-2xl pl-8">
+        <span aria-hidden="true" className="absolute top-0 bottom-0 left-0 w-px bg-border" />
+        <span
+          aria-hidden="true"
+          className="absolute top-0 left-0 w-px bg-accent transition-[height] duration-150 ease-out"
+          style={{ height: `${progress * 100}%` }}
+        />
+
         {experience.map((item, index) => (
           <Reveal key={item.id} as="li" delay={index * 100} className="relative pb-12 last:pb-0">
             <span

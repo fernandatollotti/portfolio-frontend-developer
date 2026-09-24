@@ -1,4 +1,5 @@
 import { profile } from "@/data/profile";
+import { metrics } from "@/data/metrics";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -15,6 +16,17 @@ export function About() {
           </Reveal>
         ))}
       </div>
+
+      <ul className="mt-14 grid grid-cols-2 gap-8 sm:grid-cols-4">
+        {metrics.map((metric, index) => (
+          <Reveal key={metric.id} as="li" delay={index * 80}>
+            <p className="font-heading text-3xl font-semibold text-accent sm:text-4xl">
+              {metric.value}
+            </p>
+            <p className="mt-1 text-sm text-text-secondary">{metric.label}</p>
+          </Reveal>
+        ))}
+      </ul>
     </section>
   );
 }

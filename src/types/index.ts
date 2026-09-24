@@ -35,6 +35,12 @@ export interface NavItem {
   icon: NavIcon;
 }
 
+export interface Metric {
+  id: string;
+  value: string;
+  label: string;
+}
+
 export interface Client {
   id: string;
   name: string;
@@ -57,8 +63,6 @@ export interface Project {
   category: string;
   year: string;
   description: string;
-  tech: string[];
-  role: string;
   image: string;
   href?: string;
   featured?: boolean;
