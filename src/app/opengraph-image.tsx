@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { profile } from "@/data/profile";
 
-export const alt = `${profile.name} — ${profile.role}`;
+export const alt = profile.seoTitle;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -41,7 +41,7 @@ export default function OpengraphImage() {
             fontWeight: 600,
           }}
         >
-          FRONT-END DEVELOPER
+          {profile.tagline.toUpperCase()}
         </div>
         <div
           style={{
@@ -63,7 +63,7 @@ export default function OpengraphImage() {
             maxWidth: 820,
           }}
         >
-          {profile.heroDescription}
+          {profile.seoDescription}
         </div>
       </div>
     ),

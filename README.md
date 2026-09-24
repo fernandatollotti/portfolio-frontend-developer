@@ -20,7 +20,7 @@ separado dos componentes — edite esses arquivos para colocar suas informaçõe
 
 | Arquivo | Conteúdo |
 |---|---|
-| `src/data/profile.ts` | Nome, cargo, headline do hero, bio, localização, contato, redes sociais |
+| `src/data/profile.ts` | Nome, cargo, headline do hero, bio, localização, contato, redes sociais, título/descrição/palavras-chave de SEO |
 | `src/data/projects.ts` | Projetos (nome, categoria, descrição, tecnologias, imagem, link) |
 | `src/data/experience.ts` | Timeline de formação & experiência |
 | `src/data/services.ts` | Serviços oferecidos |
@@ -47,6 +47,48 @@ card do perfil e no botão de chat flutuante) leva direto para `mailto:` com o e
 `NEXT_PUBLIC_SITE_URL` alimenta o `metadataBase`, o `sitemap.xml` (`src/app/sitemap.ts`) e o
 `robots.txt` (`src/app/robots.ts`). A imagem de Open Graph é gerada dinamicamente em
 `src/app/opengraph-image.tsx`. Defina essa variável antes de publicar.
+
+### Estratégia de SEO local (atual: São Paulo, SP)
+
+O conteúdo do site foi escrito com foco em SEO local. Ao trocar cidade/serviços reais, mantenha
+o mesmo padrão nos campos abaixo (todos em `src/data/profile.ts`):
+
+- **Palavra-chave primária**: "Desenvolvedor Front-end em [Cidade]" — usada no H1 do hero
+  (`heroHeadline`), no eyebrow (`tagline`), no `<title>` (`seoTitle`) e na meta description
+  (`seoDescription`).
+- **Palavras-chave secundárias**: `keywords` — usadas na tag `<meta name="keywords">` e como guia
+  para o texto (bio, serviços). Ajuste para os serviços que você realmente oferece.
+- `seoTitle` e `seoDescription` são **separados** de `heroHeadline`/`heroDescription` de propósito:
+  o título/descrição de busca precisam ser curtos e objetivos (título ≤ 60 caracteres, descrição
+  ≤ 160), enquanto o texto do hero pode ser um pouco mais longo e humano.
+- A cidade aparece no conteúdo visível (hero, bio, serviços) e também nos dados estruturados
+  (`Person` JSON-LD em `src/app/layout.tsx`, campo `address.addressLocality`) — os dois importam
+  para SEO local, não só o schema.
+
+Depois de publicar, valide com:
+- [Google Rich Results Test](https://search.google.com/test/rich-results) para o JSON-LD
+- [PageSpeed Insights](https://pagespeed.web.dev) para Core Web Vitals
+- Google Search Console (veja abaixo) para indexação e consultas de busca reais
+
+### Analytics e Search Console
+
+Nenhum script de rastreamento é carregado até você configurar as variáveis de ambiente
+(veja `.env.example`):
+
+- `NEXT_PUBLIC_GA_ID`: ID do Google Analytics 4 (formato `G-XXXXXXXXXX`), criado em
+  [analytics.google.com](https://analytics.google.com). Com essa variável definida, o
+  `src/components/Analytics.tsx` carrega o `gtag.js` automaticamente.
+- `GOOGLE_SITE_VERIFICATION`: código de verificação do
+  [Search Console](https://search.google.com/search-console) (método "HTML tag" — cole só o
+  valor do atributo `content`, não a tag inteira).
+
+Depois de configurar o Search Console, envie o sitemap (`/sitemap.xml`) para acompanhar indexação
+e as palavras-chave que realmente trazem tráfego orgânico — é esse relatório que valida (ou não)
+as palavras-chave escolhidas aqui, então revise periodicamente e ajuste o conteúdo.
+
+**LGPD**: ao ativar o Analytics, você passa a coletar dados de visitantes. Se for publicar para o
+público brasileiro, avalie a necessidade de uma política de privacidade / aviso de cookies — este
+projeto não inclui banner de consentimento.
 
 ## Build de produção
 

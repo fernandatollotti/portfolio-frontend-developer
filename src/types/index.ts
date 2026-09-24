@@ -10,6 +10,12 @@ export interface Profile {
   tagline: string;
   heroHeadline: string;
   heroDescription: string;
+  /** Dedicated <title> copy — kept separate from heroHeadline so each can be tuned for its own audience (search snippet vs. on-page reading). */
+  seoTitle: string;
+  /** Dedicated meta description copy, ~150-160 characters. */
+  seoDescription: string;
+  /** Target keywords for the <meta name="keywords"> tag and general on-page content strategy. */
+  keywords: string[];
   bio: string[];
   location: string;
   email: string;

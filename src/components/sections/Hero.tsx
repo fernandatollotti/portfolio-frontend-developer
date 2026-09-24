@@ -9,7 +9,7 @@ function HeroGraphic() {
       viewBox="0 0 1200 800"
       preserveAspectRatio="xMaxYMid slice"
       aria-hidden="true"
-      className="pointer-events-none absolute inset-y-0 right-0 hidden h-full w-[55%] opacity-70 sm:block"
+      className="pointer-events-none absolute inset-y-0 right-0 hidden h-full w-[45%] opacity-70 xl:block"
     >
       <defs>
         <radialGradient id="hero-glow" cx="50%" cy="50%" r="50%">
