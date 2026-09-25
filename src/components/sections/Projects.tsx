@@ -32,8 +32,8 @@ export function Projects() {
                 className="block overflow-hidden rounded-2xl border border-border bg-bg-secondary"
                 aria-label={`Ver projeto ${project.name}`}
               >
-                <div className="relative aspect-[4/3] w-full overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element -- static local SVG, no optimization needed */}
+                <div className="relative aspect-video w-full overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element -- local static asset, no optimization needed */}
                   <img
                     src={project.image}
                     alt={`Prévia do projeto ${project.name}`}

@@ -12,8 +12,7 @@ export const services: Service[] = [
     id: "websites",
     number: "02",
     title: "Desenvolvimento de Websites",
-    description:
-      "Desenvolvimento de sites institucionais para empresas em São Paulo e em todo o Brasil.",
+    description: "Desenvolvimento de sites institucionais e páginas profissionais.",
     icon: "globe",
   },
   {

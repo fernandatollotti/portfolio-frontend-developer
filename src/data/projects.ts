@@ -1,47 +1,36 @@
 import { Project } from "@/types";
 
-/** Placeholder projects — swap in your real work (name, images, links, description). */
 export const projects: Project[] = [
   {
-    id: "aurora-commerce",
-    name: "Aurora Commerce",
-    category: "E-commerce",
+    id: "atos-hub",
+    name: "Atos Hub",
+    category: "One page",
     year: "2026",
     description:
-      "Plataforma de e-commerce headless com catálogo dinâmico, carrinho persistente e checkout otimizado para conversão.",
-    image: "/images/projects/project-1.svg",
+      "Landing page one-page para uma fintech de crédito, apresentando a plataforma, soluções e diferenciais em uma experiência direta e objetiva.",
+    image: "/images/projects/atos-hub.jpg",
     href: "#",
     featured: true,
   },
   {
-    id: "nimbus-dashboard",
-    name: "Nimbus Dashboard",
-    category: "SaaS / Painel administrativo",
-    year: "2025",
+    id: "tempervale",
+    name: "Tempervale",
+    category: "Site Institucional",
+    year: "2023",
     description:
-      "Painel administrativo com visualização de dados em tempo real, componentes reutilizáveis e foco em performance.",
-    image: "/images/projects/project-2.svg",
+      "Site institucional para empresa de esquadrias de alumínio, com catálogo de produtos e apresentação dos serviços em um layout moderno.",
+    image: "/images/projects/tempervale.jpg",
     href: "#",
     featured: true,
   },
   {
-    id: "orbit-landing",
-    name: "Orbit Landing",
-    category: "Landing page",
-    year: "2025",
+    id: "macena-silva",
+    name: "Macena Silva",
+    category: "Site Institucional",
+    year: "2022",
     description:
-      "Landing page de alta conversão para lançamento de produto digital, com animações leves e SEO técnico.",
-    image: "/images/projects/project-3.svg",
-    href: "#",
-  },
-  {
-    id: "studio-wp",
-    name: "Studio Institucional",
-    category: "WordPress",
-    year: "2024",
-    description:
-      "Site institucional em WordPress com tema personalizado, editor de blocos configurado e otimização de performance.",
-    image: "/images/projects/project-4.svg",
-    href: "#",
+      "Site institucional para escritório de advocacia especializado em direito à saúde, com apresentação de serviços, decisões favoráveis e conteúdo informativo.",
+    image: "/images/projects/macena-silva.jpg",
+    href: "https://macenasilva.com.br",
   },
 ];
