@@ -29,6 +29,8 @@ export function Projects() {
             >
               <a
                 href={project.href ?? "#"}
+                target={project.href?.startsWith("http") ? "_blank" : undefined}
+                rel={project.href?.startsWith("http") ? "noopener noreferrer" : undefined}
                 className="block overflow-hidden rounded-2xl border border-border bg-bg-secondary"
                 aria-label={`Ver projeto ${project.name}`}
               >
@@ -55,6 +57,8 @@ export function Projects() {
 
                 <a
                   href={project.href ?? "#"}
+                  target={project.href?.startsWith("http") ? "_blank" : undefined}
+                  rel={project.href?.startsWith("http") ? "noopener noreferrer" : undefined}
                   className="mt-5 inline-flex items-center gap-1 font-heading text-sm font-medium text-text transition-colors hover:text-accent"
                 >
                   Ver projeto

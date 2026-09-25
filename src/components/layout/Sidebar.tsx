@@ -93,60 +93,61 @@ export function Sidebar() {
           </div>
         </div>
 
-        {/* Active-project layer — screenshots are landscape, so they get their own
-            contained box up top instead of the full-bleed treatment (which is only
-            right for a portrait headshot). */}
+        {/* Active-project layer — full-bleed screenshot, top-anchored so the header/
+            hero area (the most recognizable part of a site) stays in frame. */}
         <div
           className={cn(
-            "absolute inset-0 flex flex-col p-4 pt-[4.25rem] transition-opacity duration-500",
+            "absolute inset-0 transition-opacity duration-500",
             activeProject ? "opacity-100" : "pointer-events-none opacity-0"
           )}
         >
           {activeProject && (
             <>
-              <div className="relative aspect-video w-full shrink-0 overflow-hidden rounded-2xl border border-border">
-                {/* eslint-disable-next-line @next/next/no-img-element -- local static asset, no optimization needed */}
-                <img
-                  src={activeProject.image}
-                  alt={`Prévia do projeto ${activeProject.name}`}
-                  className="h-full w-full object-cover"
-                />
-              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element -- local static asset, no optimization needed */}
+              <img
+                src={activeProject.image}
+                alt={`Prévia do projeto ${activeProject.name}`}
+                className="absolute inset-0 h-full w-full object-cover object-top"
+              />
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 bg-gradient-to-t from-bg from-15% via-bg/40 via-55% to-transparent"
+              />
 
-              <div className="mt-6 flex flex-1 flex-col overflow-hidden">
+              <div className="absolute inset-x-6 bottom-6">
                 <p className="text-xs font-semibold tracking-[0.2em] text-accent uppercase">
                   {activeProject.category} · {activeProject.year}
                 </p>
-                <h2 className="mt-2 font-heading text-xl font-semibold text-text">
+                <h2 className="mt-2 font-heading text-2xl font-semibold text-text">
                   {activeProject.name}
                 </h2>
                 <p className="mt-3 text-sm leading-relaxed text-text-secondary">
                   {activeProject.description}
                 </p>
 
-                <div className="mt-auto">
-                  <div className="my-5 h-px bg-border" />
+                <div className="my-5 h-px bg-border" />
 
-                  <div className="flex items-center justify-between gap-3">
-                    <a
-                      href={activeProject.href ?? "#"}
-                      className="group inline-flex items-center gap-2 rounded-full bg-accent py-2.5 pr-2.5 pl-5 font-heading text-sm font-medium text-bg transition-colors hover:bg-accent/90"
-                    >
-                      Ver projeto
-                      <span className="flex h-7 w-7 items-center justify-center rounded-full bg-bg/15">
-                        <ArrowUpRight
-                          className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                          aria-hidden="true"
-                        />
-                      </span>
-                    </a>
-                    <p className="shrink-0 text-xs text-text-muted">
-                      <span className="text-text-secondary">
-                        {String(activeIndex + 1).padStart(2, "0")}
-                      </span>{" "}
-                      / {String(projects.length).padStart(2, "0")}
-                    </p>
-                  </div>
+                <div className="flex items-center justify-between gap-3">
+                  <a
+                    href={activeProject.href ?? "#"}
+                    target={activeProject.href?.startsWith("http") ? "_blank" : undefined}
+                    rel={activeProject.href?.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className="group inline-flex items-center gap-2 rounded-full bg-accent py-2.5 pr-2.5 pl-5 font-heading text-sm font-medium text-bg transition-colors hover:bg-accent/90"
+                  >
+                    Ver projeto
+                    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-bg/15">
+                      <ArrowUpRight
+                        className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                        aria-hidden="true"
+                      />
+                    </span>
+                  </a>
+                  <p className="shrink-0 text-xs text-text-muted">
+                    <span className="text-text-secondary">
+                      {String(activeIndex + 1).padStart(2, "0")}
+                    </span>{" "}
+                    / {String(projects.length).padStart(2, "0")}
+                  </p>
                 </div>
               </div>
             </>
