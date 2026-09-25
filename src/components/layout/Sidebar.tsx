@@ -109,10 +109,7 @@ export function Sidebar() {
                 alt={`Prévia do projeto ${activeProject.name}`}
                 className="absolute inset-0 h-full w-full object-cover object-top"
               />
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 bg-gradient-to-t from-bg from-15% via-bg/40 via-55% to-transparent"
-              />
+              <div aria-hidden="true" className="absolute inset-0 bg-black/40 backdrop-blur-md" />
 
               <div className="absolute inset-x-6 bottom-6">
                 <p className="text-xs font-semibold tracking-[0.2em] text-accent uppercase">

@@ -2,9 +2,8 @@ import { ExperienceItem } from "@/types";
 
 /**
  * Timeline baseada no histórico real do LinkedIn.
- * Datas de "Estagiária" (Agicom Metadata) e "Aprendiz da Qualidade" (Johnson Controls)
- * são aproximadas — a captura de tela original estava difícil de ler nesses dois
- * períodos, então vale conferir e ajustar antes de publicar.
+ * Data de "Estagiária" (Agicom Metadata) é aproximada — a captura de tela original
+ * estava difícil de ler nesse período, então vale conferir e ajustar antes de publicar.
  */
 export const experience: ExperienceItem[] = [
   {
@@ -61,14 +60,5 @@ export const experience: ExperienceItem[] = [
     org: "Universidade Metodista de São Paulo",
     description:
       "Formação com atividades em design gráfico, animação, criação de websites, curta-metragem, vídeo-clipe e modelagem 3D.",
-  },
-  {
-    id: "johnson-controls",
-    year: "2014 – 2016",
-    type: "work",
-    title: "Aprendiz da Qualidade",
-    org: "Johnson Controls",
-    description:
-      "Coleta e controle de dados dimensionais e acompanhamento do cronograma de manutenção de ativos, apoiando a identificação de desvios e a tomada de decisão a partir da análise de informações.",
   },
 ];

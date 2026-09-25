@@ -8,9 +8,9 @@ export const profile: Profile = {
   name: "Fernanda Tollotti",
   role: "Front-end Developer",
   tagline: "Front-end Developer",
-  heroHeadline: "Desenvolvedora Front-end criando interfaces web modernas e de alta performance.",
+  heroHeadline: "Desenvolvedora criando interfaces web modernas e de alta performance.",
   heroDescription:
-    "Desenvolvo sites institucionais, aplicações web e projetos WordPress com React, Next.js e TypeScript, com foco em performance e acessibilidade.",
+    "Desenvolvo sites institucionais, aplicações web e projetos com foco em performance e acessibilidade.",
   seoTitle: "Fernanda Tollotti — Desenvolvedora Front-end",
   seoDescription:
     "Desenvolvedora Front-end especializada em React, Next.js e WordPress. Sites institucionais rápidos, responsivos e otimizados para SEO.",
