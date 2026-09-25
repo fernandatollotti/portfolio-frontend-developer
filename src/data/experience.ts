@@ -29,7 +29,7 @@ export const experience: ExperienceItem[] = [
     year: "2023 – 2024",
     type: "work",
     title: "Gestão de Projetos Digitais",
-    org: "CRP Mangá",
+    org: "CRP Mango",
     description:
       "Acompanhamento de múltiplos projetos e sistemas simultâneos, organizando demandas, prioridades e prazos. Atuação como ponte entre clientes e equipe técnica, identificando pendências e riscos e apoiando a resolução de problemas para garantir a qualidade das entregas.",
   },

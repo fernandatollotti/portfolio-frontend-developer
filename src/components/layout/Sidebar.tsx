@@ -4,7 +4,7 @@ import { ArrowUpRight, Download } from "lucide-react";
 import { profile } from "@/data/profile";
 import { projects } from "@/data/projects";
 import { SocialIcon } from "@/components/ui/SocialIcon";
-import { getInitials, cn } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import { useActiveProjectContext } from "@/components/layout/ActiveProjectProvider";
 
 export function Sidebar() {
@@ -17,10 +17,6 @@ export function Sidebar() {
       className="hidden lg:sticky lg:top-0 lg:block lg:h-screen lg:w-[320px] lg:shrink-0 lg:p-4"
     >
       <div className="relative h-full w-full overflow-hidden rounded-[28px] border border-border bg-bg-secondary shadow-2xl">
-        <span className="absolute top-6 left-6 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-border bg-bg/70 font-heading text-xs font-semibold text-text backdrop-blur">
-          {getInitials(profile.name)}
-        </span>
-
         {/* Profile layer */}
         <div
           className={cn(

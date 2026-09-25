@@ -8,9 +8,9 @@ export const profile: Profile = {
   name: "Fernanda Tollotti",
   role: "Front-end Developer",
   tagline: "Front-end Developer",
-  heroHeadline: "Desenvolvedora criando interfaces web modernas e de alta performance.",
+  heroHeadline: "Desenvolvedora Front-end especializada em interfaces web modernas, rápidas e acessíveis",
   heroDescription:
-    "Desenvolvo sites institucionais, aplicações web e projetos com foco em performance e acessibilidade.",
+    "Desenvolvo sites institucionais, landing pages e aplicações web com React e WordPress, unindo performance, SEO e experiência do usuário em cada projeto.",
   seoTitle: "Fernanda Tollotti — Desenvolvedora Front-end",
   seoDescription:
     "Desenvolvedora Front-end especializada em React, Next.js e WordPress. Sites institucionais rápidos, responsivos e otimizados para SEO.",
@@ -25,10 +25,11 @@ export const profile: Profile = {
     "Sites institucionais",
   ],
   bio: [
-    "Construir para a web, para mim, sempre foi mais do que apenas escrever código — gosto de transformar necessidades em experiências digitais que realmente funcionem.",
-    "Tenho mais de 3 anos de experiência com desenvolvimento web. Comecei trabalhando com WordPress e PHP e, ao longo da minha trajetória, fui direcionando minha atuação cada vez mais para o Front-end, com experiência em websites e landing pages usando WordPress, JavaScript, HTML, CSS, PHP e MySQL, além de conhecimentos em React.",
-    "Também atuei com gestão de projetos digitais, fazendo a ponte entre clientes e equipes técnicas — uma experiência que me ensinou a olhar além do código e entender melhor o problema que precisa ser resolvido. Hoje, meu foco está no desenvolvimento Front-end, com atenção à responsividade, performance, SEO e experiência do usuário.",
-    "Atualmente curso Análise e Desenvolvimento de Sistemas e sigo aprofundando meus conhecimentos em programação e engenharia de software. Meu objetivo é continuar evoluindo como profissional — entender o problema, pensar na melhor solução e transformar uma ideia em algo que realmente gere resultado.",
+    "Tudo começou com uma pergunta simples: como transformar uma ideia em algo que as pessoas pudessem realmente usar?",
+    "Foi assim que entrei para o mundo do desenvolvimento web — sem imaginar o quanto isso mudaria minha forma de enxergar problemas. Comecei mexendo em WordPress e PHP, montando sites do zero, e fui percebendo que o que mais me fascinava não era só o código funcionando, mas o momento em que uma interface fazia sentido para quem estava do outro lado da tela.",
+    "Com o tempo, fui me aproximando cada vez mais do Front-end. Passei a olhar com mais cuidado para cada detalhe: um botão que precisa ser óbvio, uma página que precisa carregar rápido, uma experiência que precisa ser acessível para todo mundo — não só para quem já sabe navegar bem na internet.",
+    "Também vivi um período trabalhando na ponte entre clientes e equipes técnicas, e isso mudou completamente minha forma de trabalhar. Aprendi que antes de escrever qualquer linha de código, é preciso entender de verdade o problema que a pessoa do outro lado está tentando resolver. Hoje, esse é o meu ponto de partida em cada projeto — não só escrever código bonito, mas construir coisas que funcionem na vida real, que resolvam problemas de verdade e façam a diferença para quem usa.",
+    "Se você está aqui, provavelmente também está tentando transformar uma ideia em realidade. Vamos conversar sobre como posso ajudar com isso.",
   ],
   location: "Brasil",
   email: "seuemail@exemplo.com",
