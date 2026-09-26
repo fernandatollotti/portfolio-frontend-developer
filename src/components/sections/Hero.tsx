@@ -57,7 +57,7 @@ export function Hero() {
       <Reveal delay={80}>
         <h1
           id="home-heading"
-          className="max-w-3xl font-heading text-4xl leading-[1.1] font-semibold tracking-tight text-text sm:text-5xl md:text-6xl"
+          className="max-w-full font-heading text-3xl leading-[1.15] font-semibold tracking-tight text-text sm:text-4xl lg:text-3xl xl:text-4xl"
         >
           {profile.heroHeadline}
         </h1>
@@ -75,7 +75,7 @@ export function Hero() {
             Ver projetos
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Button>
-          <Button href={`mailto:${profile.email}`} variant="secondary">
+          <Button href={profile.whatsapp} variant="secondary">
             Vamos conversar
           </Button>
         </div>

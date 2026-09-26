@@ -18,6 +18,7 @@ export interface Profile {
   keywords: string[];
   bio: string[];
   location: string;
+  whatsapp: string;
   email: string;
   socials: SocialLink[];
   resumeUrl?: string;

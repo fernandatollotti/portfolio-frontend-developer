@@ -1,16 +1,13 @@
 import { Profile } from "@/types";
 
-/**
- * Real name/photo are set — email and social links below are still placeholders,
- * swap them for the real ones before publishing.
- */
+/** Real name, photo, email and social links are all set. */
 export const profile: Profile = {
   name: "Fernanda Tollotti",
   role: "Front-end Developer",
   tagline: "Front-end Developer",
   heroHeadline: "Desenvolvedora Front-end especializada em interfaces web modernas, rápidas e acessíveis",
   heroDescription:
-    "Desenvolvo sites institucionais, landing pages e aplicações web com React e WordPress, unindo performance, SEO e experiência do usuário em cada projeto.",
+    "Desenvolvo sites institucionais e aplicações web com React e WordPress, unindo performance, SEO e experiência do usuário em cada projeto.",
   seoTitle: "Fernanda Tollotti — Desenvolvedora Front-end",
   seoDescription:
     "Desenvolvedora Front-end especializada em React, Next.js e WordPress. Sites institucionais rápidos, responsivos e otimizados para SEO.",
@@ -32,11 +29,11 @@ export const profile: Profile = {
     "Se você está aqui, provavelmente também está tentando transformar uma ideia em realidade. Vamos conversar sobre como posso ajudar com isso.",
   ],
   location: "Brasil",
-  email: "seuemail@exemplo.com",
+  whatsapp: "https://wa.me/551151040817",
+  email: "contato@fernandatollotti.com.br",
   socials: [
-    { label: "GitHub", href: "https://github.com/seu-usuario", icon: "github" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/seu-usuario", icon: "linkedin" },
-    { label: "Instagram", href: "https://instagram.com/seu-usuario", icon: "instagram" },
-    { label: "E-mail", href: "mailto:seuemail@exemplo.com", icon: "mail" },
+    { label: "GitHub", href: "https://github.com/fernandatollotti", icon: "github" },
+    { label: "LinkedIn", href: "https://linkedin.com/in/fernanda-tollotti", icon: "linkedin" },
+    { label: "E-mail", href: "mailto:contato@fernandatollotti.com.br", icon: "mail" },
   ],
 };

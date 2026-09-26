@@ -11,9 +11,9 @@ export function RightNav() {
   return (
     <nav
       aria-label="Navegação de seções"
-      className="hidden lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[96px] lg:shrink-0 lg:items-center lg:justify-center lg:border-l lg:border-border"
+      className="fixed inset-x-0 bottom-4 z-40 flex justify-center lg:sticky lg:inset-x-auto lg:bottom-auto lg:top-0 lg:z-auto lg:h-screen lg:w-[96px] lg:shrink-0 lg:items-center lg:border-l lg:border-border"
     >
-      <ul className="flex flex-col gap-2">
+      <ul className="flex items-center gap-1 rounded-full border border-border/70 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-1.5 shadow-[0_8px_30px_rgba(0,0,0,0.35)] backdrop-blur-md lg:flex-col lg:gap-2 lg:p-2">
         {navItems.map((item) => {
           const Icon = navIconMap[item.icon];
           const isActive = item.id === activeId;
@@ -35,7 +35,7 @@ export function RightNav() {
 
               <span
                 role="tooltip"
-                className="pointer-events-none absolute top-1/2 right-full mr-3 -translate-y-1/2 rounded-md border border-border bg-bg-secondary px-3 py-1.5 text-xs whitespace-nowrap text-text opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100 group-focus-within:opacity-100"
+                className="pointer-events-none absolute bottom-full left-1/2 mb-3 -translate-x-1/2 rounded-md border border-border bg-bg-secondary px-3 py-1.5 text-xs whitespace-nowrap text-text opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100 group-focus-within:opacity-100 lg:top-1/2 lg:bottom-auto lg:left-auto lg:right-full lg:mr-3 lg:mb-0 lg:-translate-x-0 lg:-translate-y-1/2"
               >
                 {item.label}
               </span>

@@ -63,7 +63,9 @@ export function Sidebar() {
 
             <div className="flex flex-wrap items-center gap-3">
               <a
-                href={`mailto:${profile.email}`}
+                href={profile.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 rounded-full bg-accent py-2.5 pr-2.5 pl-5 font-heading text-sm font-medium text-bg transition-colors hover:bg-accent/90"
               >
                 Vamos conversar

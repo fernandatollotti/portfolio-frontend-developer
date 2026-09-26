@@ -29,7 +29,7 @@ export function ChatButton() {
   }, [open]);
 
   return (
-    <div className="fixed right-5 bottom-5 z-50 sm:right-8 sm:bottom-8">
+    <div className="fixed right-5 bottom-24 z-50 lg:right-8 lg:bottom-8">
       {open && (
         <div
           ref={panelRef}
