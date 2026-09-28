@@ -1,4 +1,10 @@
 import type { NextConfig } from "next";
+import { basePath } from "./src/lib/basePath";
+
+// Set only for the GitHub Pages build (see .github/workflows/deploy.yml) — GitHub
+// Pages is a static host, so it needs `output: "export"` and can't serve custom
+// response headers, unlike a normal Next.js server deployment.
+const isStaticExport = basePath !== "";
 
 const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
@@ -9,14 +15,20 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
-  async headers() {
-    return [
-      {
-        source: "/:path*",
-        headers: securityHeaders,
-      },
-    ];
-  },
+  basePath: basePath || undefined,
+  images: { unoptimized: true },
+  ...(isStaticExport
+    ? { output: "export" as const }
+    : {
+        async headers() {
+          return [
+            {
+              source: "/:path*",
+              headers: securityHeaders,
+            },
+          ];
+        },
+      }),
 };
 
 export default nextConfig;

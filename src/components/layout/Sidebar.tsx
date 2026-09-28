@@ -5,6 +5,7 @@ import { profile } from "@/data/profile";
 import { projects } from "@/data/projects";
 import { SocialIcon } from "@/components/ui/SocialIcon";
 import { cn } from "@/lib/utils";
+import { withBasePath } from "@/lib/basePath";
 import { useActiveProjectContext } from "@/components/layout/ActiveProjectProvider";
 
 export function Sidebar() {
@@ -26,7 +27,7 @@ export function Sidebar() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element -- local static asset, no optimization needed */}
           <img
-            src="/images/avatar.webp"
+            src={withBasePath("/images/avatar.webp")}
             alt={`Foto de perfil de ${profile.name}`}
             className="absolute inset-0 h-full w-full object-cover"
           />
@@ -103,7 +104,7 @@ export function Sidebar() {
             <>
               {/* eslint-disable-next-line @next/next/no-img-element -- local static asset, no optimization needed */}
               <img
-                src={activeProject.image}
+                src={withBasePath(activeProject.image)}
                 alt={`Prévia do projeto ${activeProject.name}`}
                 className="absolute inset-0 h-full w-full object-cover object-top"
               />

@@ -37,9 +37,10 @@ depoimentos ou clientes como reais sem que sejam.
 
 ## Contato
 
-Não há mais uma seção/formulário de contato dedicado — o convite "Vamos conversar" (no hero, no
-card do perfil e no botão de chat flutuante) leva direto para `mailto:` com o e-mail definido em
-`src/data/profile.ts`, e os ícones sociais completam os outros canais.
+Não há mais uma seção/formulário de contato dedicado — o convite "Vamos conversar" (no hero e no
+card do perfil) leva direto para o WhatsApp (`profile.whatsapp`, formato `https://wa.me/<código do
+país><número>`); o botão de chat flutuante oferece e-mail e redes sociais. Todos os contatos ficam
+em `src/data/profile.ts`.
 
 ## SEO
 
@@ -90,7 +91,33 @@ as palavras-chave escolhidas aqui, então revise periodicamente e ajuste o conte
 público brasileiro, avalie a necessidade de uma política de privacidade / aviso de cookies — este
 projeto não inclui banner de consentimento.
 
-## Build de produção
+## Deploy (GitHub Pages)
+
+O site é publicado automaticamente no GitHub Pages a cada push na branch `master`, via
+`.github/workflows/deploy.yml`. GitHub Pages só serve arquivos estáticos, então o build de CI usa
+export estático do Next.js (`output: "export"`), ativado automaticamente quando
+`NEXT_PUBLIC_BASE_PATH` está definido — isso só acontece dentro do workflow, então `npm run dev` e
+`npm run build` locais continuam funcionando normalmente, em modo servidor.
+
+**Passo único manual** (só precisa fazer uma vez): no repositório no GitHub, vá em
+**Settings → Pages** e defina **Source** como **GitHub Actions**. Depois disso, todo push na
+`master` publica sozinho em `https://fernandatollotti.github.io/portfolio-frontend-developer`.
+
+Detalhes técnicos, caso precise mexer:
+
+- `NEXT_PUBLIC_BASE_PATH=/portfolio-frontend-developer` e `NEXT_PUBLIC_SITE_URL` (já com esse
+  caminho incluído) são definidos como variáveis de ambiente **dentro do workflow**, não em
+  `.env.local` — não precisa configurar nada localmente para isso funcionar.
+- `src/lib/basePath.ts` exporta `withBasePath()`, usado nas poucas imagens referenciadas por
+  caminho absoluto (`<img src="...">`, não gerenciadas pelo Next) para que também respeitem o
+  `basePath` no build do GitHub Pages — se adicionar novas imagens assim, use esse helper.
+- Como GitHub Pages não serve headers HTTP customizados, os headers de segurança
+  (`next.config.ts`) só se aplicam ao rodar em um servidor Node de verdade (`npm start` ou outra
+  hospedagem) — no GitHub Pages eles simplesmente não existem, é uma limitação da plataforma.
+- Se trocar o nome do repositório, atualize `NEXT_PUBLIC_BASE_PATH`/`NEXT_PUBLIC_SITE_URL` no
+  workflow.
+
+## Build de produção (servidor Node, sem GitHub Pages)
 
 ```bash
 npm run build
