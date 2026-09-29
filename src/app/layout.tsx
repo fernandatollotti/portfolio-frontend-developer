@@ -36,11 +36,13 @@ export const metadata: Metadata = {
     title: profile.seoTitle,
     description: profile.seoDescription,
     siteName: profile.name,
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: profile.seoTitle }],
   },
   twitter: {
     card: "summary_large_image",
     title: profile.seoTitle,
     description: profile.seoDescription,
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,

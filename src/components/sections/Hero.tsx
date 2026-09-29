@@ -28,10 +28,6 @@ function HeroGraphic() {
 
       <rect x="300" y="650" width="180" height="180" fill="url(#hero-dots)" opacity="0.6" />
 
-      <line x1="120" y1="80" x2="520" y2="560" stroke="#26262d" strokeWidth="1" />
-      <line x1="260" y1="20" x2="560" y2="380" stroke="#dab061" strokeWidth="1" opacity="0.35" />
-      <line x1="180" y1="900" x2="480" y2="1220" stroke="#26262d" strokeWidth="1" />
-
       <circle cx="470" cy="980" r="5" fill="#dab061" />
       <circle cx="410" cy="1040" r="3" fill="#dab061" opacity="0.6" />
       <circle cx="330" cy="620" r="140" fill="none" stroke="#26262d" strokeWidth="1" opacity="0.5" />

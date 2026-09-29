@@ -29,7 +29,9 @@ export const profile: Profile = {
     "Se você está aqui, provavelmente também está tentando transformar uma ideia em realidade. Vamos conversar sobre como posso ajudar com isso.",
   ],
   location: "Brasil",
-  whatsapp: "https://wa.me/551151040817",
+  whatsapp: `https://wa.me/551151040817?text=${encodeURIComponent(
+    "Olá, Fernanda! Vi seu portfólio e gostaria de conversar sobre um projeto."
+  )}`,
   email: "contato@fernandatollotti.com.br",
   socials: [
     { label: "GitHub", href: "https://github.com/fernandatollotti", icon: "github" },
