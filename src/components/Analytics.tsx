@@ -11,9 +11,9 @@ import Script from "next/script";
  *   if GTM is more than you need. Ignored if NEXT_PUBLIC_GTM_ID is also set —
  *   configure GA4 as a tag inside GTM instead, to avoid double-counting.
  *
- * Note: once enabled, this collects visitor analytics. If you're targeting
- * Brazilian traffic, review LGPD requirements (a privacy policy / cookie
- * notice) before going live — this component does not add a consent banner.
+ * Rendered by src/components/CookieConsent.tsx only after the visitor accepts
+ * the cookie banner — don't render this directly elsewhere, or tracking would
+ * run without consent (LGPD requirement for Brazilian traffic).
  */
 export function Analytics() {
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID;

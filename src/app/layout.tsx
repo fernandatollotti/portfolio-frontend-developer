@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
 import { profile } from "@/data/profile";
-import { Analytics } from "@/components/Analytics";
+import { CookieConsent } from "@/components/CookieConsent";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -77,7 +77,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   };
 
   return (
-    <html lang="pt-BR" className={`${spaceGrotesk.variable} ${inter.variable} h-full antialiased`}>
+    <html
+      lang="pt-BR"
+      data-scroll-behavior="smooth"
+      className={`${spaceGrotesk.variable} ${inter.variable} h-full antialiased`}
+    >
       <body className="min-h-full">
         <a href="#main-content" className="skip-link">
           Pular para o conteúdo principal
@@ -87,7 +91,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <Analytics />
+        <CookieConsent />
       </body>
     </html>
   );

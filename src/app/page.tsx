@@ -4,6 +4,7 @@ import { Sidebar } from "@/components/layout/Sidebar";
 import { RightNav } from "@/components/layout/RightNav";
 import { MobileMenu } from "@/components/layout/MobileMenu";
 import { ChatButton } from "@/components/layout/ChatButton";
+import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/ui/Container";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
@@ -36,6 +37,7 @@ export default function Home() {
               <Services />
               <Process />
               <Technologies />
+              <Footer />
             </Container>
           </main>
 
