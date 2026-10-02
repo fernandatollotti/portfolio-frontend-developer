@@ -52,9 +52,9 @@ export function CookieConsent() {
         <div
           role="dialog"
           aria-label="Aviso de cookies"
-          className="fixed inset-x-4 top-20 z-40 rounded-2xl border border-border bg-bg-secondary p-5 shadow-2xl lg:inset-x-auto lg:top-auto lg:bottom-8 lg:left-8 lg:w-full lg:max-w-sm"
+          className="fixed inset-x-4 bottom-24 z-40 rounded-2xl border border-border bg-bg-secondary p-5 shadow-2xl lg:inset-x-auto lg:bottom-8 lg:left-1/2 lg:flex lg:w-[calc(100%-4rem)] lg:max-w-3xl lg:-translate-x-1/2 lg:items-center lg:gap-6"
         >
-          <p className="text-sm leading-relaxed text-text-secondary">
+          <p className="text-sm leading-relaxed text-text-secondary lg:flex-1">
             Este site usa cookies de análise para entender como os visitantes o utilizam. Você pode
             aceitar ou recusar — a navegação funciona normalmente de qualquer forma. Saiba mais na{" "}
             <Link href="/politica-de-privacidade" className="text-accent underline hover:no-underline">
@@ -62,7 +62,7 @@ export function CookieConsent() {
             </Link>
             .
           </p>
-          <div className="mt-4 flex items-center gap-3">
+          <div className="mt-4 flex shrink-0 items-center gap-3 lg:mt-0">
             <button
               type="button"
               onClick={() => choose("accepted")}
