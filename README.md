@@ -74,12 +74,11 @@ Depois de publicar, valide com:
 
 ### Analytics e Search Console
 
-Nenhum script de rastreamento é carregado até você configurar as variáveis de ambiente
-(veja `.env.example`):
-
-- `NEXT_PUBLIC_GA_ID`: ID do Google Analytics 4 (formato `G-XXXXXXXXXX`), criado em
-  [analytics.google.com](https://analytics.google.com). Com essa variável definida, o
-  `src/components/Analytics.tsx` carrega o `gtag.js` automaticamente.
+- **Google Analytics 4**: a propriedade `G-HME1HCRWZX` (a mesma do site anterior, para manter o
+  histórico) está definida em `src/lib/site.ts`. Pode ser trocada pela variável
+  `NEXT_PUBLIC_GA_ID`. Só carrega em build de produção e depois do aceite no aviso de cookies —
+  visitas em `npm run dev` não são contadas.
+- `NEXT_PUBLIC_GTM_ID` (opcional): se definido, carrega o Google Tag Manager no lugar do GA4.
 - `GOOGLE_SITE_VERIFICATION`: código de verificação do
   [Search Console](https://search.google.com/search-console) (método "HTML tag" — cole só o
   valor do atributo `content`, não a tag inteira).
@@ -117,7 +116,6 @@ Variáveis de ambiente (Settings → Variables and secrets):
 | Variável | Valor |
 |---|---|
 | `NEXT_PUBLIC_SITE_URL` | `https://fernandatollotti.com.br` |
-| `NEXT_PUBLIC_GA_ID` | ID do GA4 (opcional) |
 | `GOOGLE_SITE_VERIFICATION` | opcional — com propriedade de Domínio no Search Console não é necessário |
 
 A versão do Node vem do `.nvmrc`. Depois disso, todo push na `master` publica sozinho.

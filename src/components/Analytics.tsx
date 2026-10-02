@@ -1,23 +1,19 @@
 import Script from "next/script";
+import { gaId } from "@/lib/site";
 
 /**
- * Loads tracking only when the corresponding env var is set — no script ships
- * until configured. See .env.example.
- *
- * Two options, pick one:
- * - NEXT_PUBLIC_GTM_ID: Google Tag Manager container. Recommended if you'll
- *   manage GA4, Meta Pixel, conversion tags etc. without touching code again.
- * - NEXT_PUBLIC_GA_ID: Google Analytics 4 loaded directly (gtag.js), simpler
- *   if GTM is more than you need. Ignored if NEXT_PUBLIC_GTM_ID is also set —
- *   configure GA4 as a tag inside GTM instead, to avoid double-counting.
+ * GA4 (gtag.js) by default, or Google Tag Manager if NEXT_PUBLIC_GTM_ID is set
+ * (GA4 is then skipped — configure it as a tag inside GTM to avoid double-counting).
  *
  * Rendered by src/components/CookieConsent.tsx only after the visitor accepts
  * the cookie banner — don't render this directly elsewhere, or tracking would
  * run without consent (LGPD requirement for Brazilian traffic).
  */
 export function Analytics() {
+  // Keeps local development visits out of the real analytics property.
+  if (process.env.NODE_ENV !== "production") return null;
+
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
-  const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
   return (
     <>
