@@ -2,7 +2,9 @@
 
 import { useState, useSyncExternalStore } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Analytics } from "@/components/Analytics";
+import { cn } from "@/lib/utils";
 
 type Consent = "accepted" | "declined" | null;
 
@@ -34,6 +36,7 @@ export function CookieConsent() {
   // storage event (which only fires in *other* tabs, not the one that wrote it).
   const [chosen, setChosen] = useState<Consent>(null);
   const consent = chosen ?? persisted;
+  const hasPageShell = usePathname() === "/";
 
   function choose(value: "accepted" | "declined") {
     setChosen(value);
@@ -49,12 +52,18 @@ export function CookieConsent() {
       {consent === "accepted" && <Analytics />}
 
       {consent === null && (
-        // Desktop: centered in the content column between the 320px sidebar and the
-        // 96px icon dock (page shell is max 1440px wide), so it never covers either.
         <div
           role="dialog"
           aria-label="Aviso de cookies"
-          className="fixed inset-x-4 bottom-24 z-40 rounded-2xl border border-border bg-bg-secondary p-5 shadow-2xl lg:inset-x-auto lg:bottom-8 lg:left-[calc(50%_+_112px)] lg:flex lg:w-[calc(min(100vw,1440px)_-_416px_-_4rem)] lg:max-w-3xl lg:-translate-x-1/2 lg:items-center lg:gap-6"
+          className={cn(
+            "fixed inset-x-4 z-40 rounded-2xl border border-border bg-bg-secondary p-5 shadow-2xl lg:inset-x-auto lg:bottom-8 lg:flex lg:max-w-3xl lg:-translate-x-1/2 lg:items-center lg:gap-6",
+            // Home: sits above the mobile icon dock and, on desktop, is centered in the
+            // content column between the 320px sidebar and the 96px dock (page shell is
+            // max 1440px wide). Other pages have no sidebar/dock: plain centering.
+            hasPageShell
+              ? "bottom-24 lg:left-[calc(50%_+_112px)] lg:w-[calc(min(100vw,1440px)_-_416px_-_4rem)]"
+              : "bottom-4 lg:left-1/2 lg:w-[calc(100%_-_4rem)]"
+          )}
         >
           <p className="text-sm leading-relaxed text-text-secondary lg:flex-1">
             Este site usa cookies de análise para entender como os visitantes o utilizam. Você pode
