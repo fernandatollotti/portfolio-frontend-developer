@@ -3,11 +3,11 @@ import { Profile } from "@/types";
 /** Real name, photo, email and social links are all set. */
 export const profile: Profile = {
   name: "Fernanda Tollotti",
-  role: "Front-end Developer",
-  tagline: "Front-end Developer",
-  heroHeadline: "Desenvolvedora Front-end especializada em interfaces web modernas, rápidas e acessíveis",
+  role: "Front-end Developer & Web Designer",
+  tagline: "Front-end Developer & Web Designer",
+  heroHeadline: "Interfaces web rápidas, acessíveis e pensadas para gerar resultados",
   heroDescription:
-    "Desenvolvo sites institucionais e aplicações web com React e WordPress, unindo performance, SEO e experiência do usuário em cada projeto.",
+    "Como desenvolvedora Front-end e Web Designer, crio sites institucionais e aplicações web que unem performance, SEO e uma boa experiência para quem acessa — do layout à publicação.",
   seoTitle: "Fernanda Tollotti — Desenvolvedora Front-end",
   seoDescription:
     "Desenvolvedora Front-end especializada em React, Next.js e WordPress. Sites institucionais rápidos, responsivos e otimizados para SEO.",
@@ -22,11 +22,9 @@ export const profile: Profile = {
     "Sites institucionais",
   ],
   bio: [
-    "Desenvolvedora Front-end com mais de 3 anos de experiência em desenvolvimento web. Minha trajetória começou em WordPress e PHP e foi direcionada progressivamente para o desenvolvimento Front-end moderno.",
-    "Tenho experiência no desenvolvimento e manutenção de websites e landing pages, utilizando WordPress, JavaScript, HTML, CSS, PHP e MySQL, além de conhecimentos em React. O trabalho é orientado por responsividade, performance, acessibilidade, SEO e experiência do usuário.",
-    "Também atuei com gestão de projetos digitais, fazendo a ponte entre clientes e equipes técnicas — experiência que reforçou a importância de entender bem o problema antes de propor uma solução técnica.",
-    "Atualmente curso Análise e Desenvolvimento de Sistemas, aprofundando conhecimentos em programação e engenharia de software, com foco em entregar soluções completas, bem estruturadas e orientadas a resultado.",
-  ],
+    "Desenvolvedora Front-end e Web Designer com mais de 3 anos de experiência na criação de sites institucionais e landing pages. Participo de todas as etapas do projeto, da concepção visual da interface até a publicação, com atenção à qualidade técnica e à experiência de quem vai usar o produto.",
+    "Meu trabalho se apoia em quatro pilares: performance, acessibilidade, responsividade e SEO. Cada projeto é pensado para carregar rápido, funcionar bem em qualquer dispositivo, ser acessível a todas as pessoas e ser encontrado nos mecanismos de busca.",
+    "A experiência com gestão de projetos digitais ampliou minha visão além do código. Sei conduzir a comunicação entre clientes e equipes técnicas, organizar prioridades e garantir que a entrega final atenda ao objetivo do negócio.",  ],
   location: "Brasil",
   whatsapp: `https://wa.me/551151040817?text=${encodeURIComponent(
     "Olá, Fernanda! Vi seu portfólio e gostaria de conversar sobre um projeto."

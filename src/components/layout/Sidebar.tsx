@@ -54,7 +54,14 @@ export function Sidebar() {
           <div className="absolute inset-x-6 bottom-6">
             <p className="text-sm text-text-secondary">Olá, eu sou</p>
             <h1 className="mt-1 font-heading text-2xl font-semibold text-text">{profile.name}</h1>
-            <p className="mt-1 text-sm font-medium text-accent">{profile.role}</p>
+            <p className="mt-1 text-sm font-medium text-accent">
+              {profile.role.split(" & ").map((part, i) => (
+                <span key={part} className="whitespace-nowrap">
+                  {i > 0 && " & "}
+                  {part}
+                </span>
+              ))}
+            </p>
 
             <p className="mt-3 text-sm leading-relaxed text-text-secondary">
               {profile.heroDescription}
