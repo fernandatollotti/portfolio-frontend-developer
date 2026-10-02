@@ -1,6 +1,6 @@
 import { profile } from "@/data/profile";
 
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com";
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://fernandatollotti.com.br";
 
 export const ogImage = {
   url: "/og-image.png",

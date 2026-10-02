@@ -39,14 +39,15 @@ depoimentos ou clientes como reais sem que sejam.
 
 Não há mais uma seção/formulário de contato dedicado — o convite "Vamos conversar" (no hero e no
 card do perfil) leva direto para o WhatsApp (`profile.whatsapp`, formato `https://wa.me/<código do
-país><número>`); o botão de chat flutuante oferece e-mail e redes sociais. Todos os contatos ficam
-em `src/data/profile.ts`.
+país><número>`). O botão de chat flutuante (`ChatButton`) está oculto em `src/app/page.tsx`.
+Todos os contatos ficam em `src/data/profile.ts`.
 
 ## SEO
 
 `NEXT_PUBLIC_SITE_URL` alimenta o `metadataBase`, o `sitemap.xml` (`src/app/sitemap.ts`) e o
-`robots.txt` (`src/app/robots.ts`). A imagem de Open Graph é gerada dinamicamente em
-`src/app/opengraph-image.tsx`. Defina essa variável antes de publicar.
+`robots.txt` (`src/app/robots.ts`). Sem a variável, o padrão é `https://fernandatollotti.com.br`.
+A imagem de Open Graph é gerada no build em `src/app/og-image.png/route.tsx` e publicada como
+`/og-image.png` (com extensão, para ser servida como `image/png` em hospedagem estática).
 
 ### Estratégia de SEO
 
@@ -87,39 +88,54 @@ Depois de configurar o Search Console, envie o sitemap (`/sitemap.xml`) para aco
 e as palavras-chave que realmente trazem tráfego orgânico — é esse relatório que valida (ou não)
 as palavras-chave escolhidas aqui, então revise periodicamente e ajuste o conteúdo.
 
-**LGPD**: ao ativar o Analytics, você passa a coletar dados de visitantes. Se for publicar para o
-público brasileiro, avalie a necessidade de uma política de privacidade / aviso de cookies — este
-projeto não inclui banner de consentimento.
+**LGPD**: o Analytics só é carregado depois que o visitante clica em **Aceitar** no aviso de
+cookies (`src/components/CookieConsent.tsx`). A política fica em `/politica-de-privacidade`.
 
-## Deploy (GitHub Pages)
+## Build
 
-O site é publicado automaticamente no GitHub Pages a cada push na branch `master`, via
-`.github/workflows/deploy.yml`. GitHub Pages só serve arquivos estáticos, então o build de CI usa
-export estático do Next.js (`output: "export"`), ativado automaticamente quando
-`NEXT_PUBLIC_BASE_PATH` está definido — isso só acontece dentro do workflow, então `npm run dev` e
-`npm run build` locais continuam funcionando normalmente, em modo servidor.
-
-**Passo único manual** (só precisa fazer uma vez): no repositório no GitHub, vá em
-**Settings → Pages** e defina **Source** como **GitHub Actions**. Depois disso, todo push na
-`master` publica sozinho em `https://fernandatollotti.github.io/portfolio-frontend-developer`.
-
-Detalhes técnicos, caso precise mexer:
-
-- `NEXT_PUBLIC_BASE_PATH=/portfolio-frontend-developer` e `NEXT_PUBLIC_SITE_URL` (já com esse
-  caminho incluído) são definidos como variáveis de ambiente **dentro do workflow**, não em
-  `.env.local` — não precisa configurar nada localmente para isso funcionar.
-- `src/lib/basePath.ts` exporta `withBasePath()`, usado nas poucas imagens referenciadas por
-  caminho absoluto (`<img src="...">`, não gerenciadas pelo Next) para que também respeitem o
-  `basePath` no build do GitHub Pages — se adicionar novas imagens assim, use esse helper.
-- Como GitHub Pages não serve headers HTTP customizados, os headers de segurança
-  (`next.config.ts`) só se aplicam ao rodar em um servidor Node de verdade (`npm start` ou outra
-  hospedagem) — no GitHub Pages eles simplesmente não existem, é uma limitação da plataforma.
-- Se trocar o nome do repositório, atualize `NEXT_PUBLIC_BASE_PATH`/`NEXT_PUBLIC_SITE_URL` no
-  workflow.
-
-## Build de produção (servidor Node, sem GitHub Pages)
+O site é sempre exportado como estático (`output: "export"`): `npm run build` gera a pasta `out/`,
+pronta para qualquer hospedagem estática. Para conferir o resultado localmente:
 
 ```bash
 npm run build
-npm start
+npx serve out
 ```
+
+## Deploy (Cloudflare Pages) — principal
+
+Configuração (uma vez só) em **Workers & Pages → Create → Pages → Connect to Git**, escolhendo
+este repositório:
+
+| Campo | Valor |
+|---|---|
+| Production branch | `master` |
+| Build command | `npm run build` |
+| Build output directory | `out` |
+
+Variáveis de ambiente (Settings → Variables and secrets):
+
+| Variável | Valor |
+|---|---|
+| `NEXT_PUBLIC_SITE_URL` | `https://fernandatollotti.com.br` |
+| `NEXT_PUBLIC_GA_ID` | ID do GA4 (opcional) |
+| `GOOGLE_SITE_VERIFICATION` | opcional — com propriedade de Domínio no Search Console não é necessário |
+
+A versão do Node vem do `.nvmrc`. Depois disso, todo push na `master` publica sozinho.
+
+- **Headers de segurança e cache**: `public/_headers` (formato do Cloudflare Pages).
+- **Domínio**: em **Custom domains**, adicione `fernandatollotti.com.br` e `www`. Para mandar o
+  `www` para o domínio principal, use **Rules → Redirect Rules** (modelo "Redirect from WWW to
+  root").
+- **Rocket Loader** (Speed → Optimization) deve ficar **desligado** — ele reescreve os scripts da
+  página e quebra a hidratação do React/Next.js.
+
+## Deploy (GitHub Pages) — legado
+
+O workflow `.github/workflows/deploy.yml` também publica em
+`https://fernandatollotti.github.io/portfolio-frontend-developer` a cada push. Esse build usa
+`NEXT_PUBLIC_BASE_PATH=/portfolio-frontend-developer` (definido só dentro do workflow), e
+`src/lib/basePath.ts` exporta `withBasePath()` para as imagens referenciadas por `<img src="...">`
+— se adicionar novas imagens assim, use esse helper. GitHub Pages ignora o `_headers`.
+
+Quando o domínio no Cloudflare estiver no ar, apague esse workflow e desative o Pages em
+**Settings → Pages**, para não haver duas cópias do site indexadas.

@@ -1,34 +1,13 @@
 import type { NextConfig } from "next";
 import { basePath } from "./src/lib/basePath";
 
-// Set only for the GitHub Pages build (see .github/workflows/deploy.yml) — GitHub
-// Pages is a static host, so it needs `output: "export"` and can't serve custom
-// response headers, unlike a normal Next.js server deployment.
-const isStaticExport = basePath !== "";
-
-const securityHeaders = [
-  { key: "X-Content-Type-Options", value: "nosniff" },
-  { key: "X-Frame-Options", value: "DENY" },
-  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-  { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
-  { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
-];
-
+// Always a static export: deployed to Cloudflare Pages (and GitHub Pages, under
+// a basePath). Security headers live in public/_headers, which Cloudflare Pages
+// applies — next.config headers() is not supported with output: "export".
 const nextConfig: NextConfig = {
+  output: "export",
   basePath: basePath || undefined,
   images: { unoptimized: true },
-  ...(isStaticExport
-    ? { output: "export" as const }
-    : {
-        async headers() {
-          return [
-            {
-              source: "/:path*",
-              headers: securityHeaders,
-            },
-          ];
-        },
-      }),
 };
 
 export default nextConfig;
