@@ -100,7 +100,7 @@ npm run build
 npx serve out
 ```
 
-## Deploy (Cloudflare Pages) — principal
+## Deploy (Cloudflare Pages)
 
 Configuração (uma vez só) em **Workers & Pages → Create → Pages → Connect to Git**, escolhendo
 este repositório:
@@ -126,14 +126,3 @@ A versão do Node vem do `.nvmrc`. Depois disso, todo push na `master` publica s
   root").
 - **Rocket Loader** (Speed → Optimization) deve ficar **desligado** — ele reescreve os scripts da
   página e quebra a hidratação do React/Next.js.
-
-## Deploy (GitHub Pages) — legado
-
-O workflow `.github/workflows/deploy.yml` também publica em
-`https://fernandatollotti.github.io/portfolio-frontend-developer` a cada push. Esse build usa
-`NEXT_PUBLIC_BASE_PATH=/portfolio-frontend-developer` (definido só dentro do workflow), e
-`src/lib/basePath.ts` exporta `withBasePath()` para as imagens referenciadas por `<img src="...">`
-— se adicionar novas imagens assim, use esse helper. GitHub Pages ignora o `_headers`.
-
-Quando o domínio no Cloudflare estiver no ar, apague esse workflow e desative o Pages em
-**Settings → Pages**, para não haver duas cópias do site indexadas.

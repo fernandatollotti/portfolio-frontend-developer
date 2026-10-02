@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { profile } from "@/data/profile";
 
 // A route named *.png (instead of the opengraph-image convention) so the static
-// export emits a file with an extension — GitHub Pages serves extensionless files
+// export emits a file with an extension — static hosts serve extensionless files
 // as application/octet-stream, which social networks reject as a preview image.
 export const dynamic = "force-static";
 

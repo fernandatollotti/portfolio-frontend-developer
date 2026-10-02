@@ -3,7 +3,6 @@ import { projects } from "@/data/projects";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Reveal } from "@/components/ui/Reveal";
 import { projectDomId } from "@/lib/utils";
-import { withBasePath } from "@/lib/basePath";
 
 export function Projects() {
   return (
@@ -38,7 +37,7 @@ export function Projects() {
                 <div className="relative aspect-video w-full overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element -- local static asset, no optimization needed */}
                   <img
-                    src={withBasePath(project.image)}
+                    src={project.image}
                     alt={project.imageAlt}
                     width={1060}
                     height={604}
