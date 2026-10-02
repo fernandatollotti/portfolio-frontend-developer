@@ -3,38 +3,6 @@ import { profile } from "@/data/profile";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 
-function HeroGraphic() {
-  return (
-    <svg
-      viewBox="0 0 600 1300"
-      preserveAspectRatio="xMidYMid slice"
-      aria-hidden="true"
-      className="pointer-events-none absolute inset-y-0 right-0 hidden h-full w-[45%] opacity-70 xl:block"
-    >
-      <defs>
-        <radialGradient id="hero-glow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#dab061" stopOpacity="0.16" />
-          <stop offset="100%" stopColor="#dab061" stopOpacity="0" />
-        </radialGradient>
-        <pattern id="hero-dots" width="28" height="28" patternUnits="userSpaceOnUse">
-          <circle cx="1.5" cy="1.5" r="1.5" fill="#26262d" />
-        </pattern>
-      </defs>
-
-      <circle cx="420" cy="430" r="170" fill="url(#hero-glow)" />
-      <circle cx="420" cy="430" r="150" fill="none" stroke="#26262d" strokeWidth="1" />
-      <circle cx="420" cy="430" r="105" fill="none" stroke="#26262d" strokeWidth="1" />
-      <circle cx="420" cy="430" r="60" fill="none" stroke="#dab061" strokeWidth="1.5" opacity="0.5" />
-
-      <rect x="300" y="650" width="180" height="180" fill="url(#hero-dots)" opacity="0.6" />
-
-      <circle cx="470" cy="980" r="5" fill="#dab061" />
-      <circle cx="410" cy="1040" r="3" fill="#dab061" opacity="0.6" />
-      <circle cx="330" cy="620" r="140" fill="none" stroke="#26262d" strokeWidth="1" opacity="0.5" />
-    </svg>
-  );
-}
-
 export function Hero() {
   return (
     <section
@@ -42,8 +10,6 @@ export function Hero() {
       aria-labelledby="home-heading"
       className="relative flex min-h-[92vh] scroll-mt-24 flex-col justify-center overflow-hidden border-b border-border py-20"
     >
-      <HeroGraphic />
-
       <Reveal>
         <p className="mb-6 font-heading text-xs font-semibold tracking-[0.25em] text-accent uppercase">
           {profile.tagline}

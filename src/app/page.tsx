@@ -3,7 +3,6 @@ import { ActiveProjectProvider } from "@/components/layout/ActiveProjectProvider
 import { Sidebar } from "@/components/layout/Sidebar";
 import { RightNav } from "@/components/layout/RightNav";
 import { MobileMenu } from "@/components/layout/MobileMenu";
-import { ChatButton } from "@/components/layout/ChatButton";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/ui/Container";
 import { Hero } from "@/components/sections/Hero";
@@ -18,6 +17,9 @@ import { Technologies } from "@/components/sections/Technologies";
 // them — the components and their data files are untouched, just not rendered.
 // import { Clients } from "@/components/sections/Clients";
 // import { Testimonials } from "@/components/sections/Testimonials";
+
+// Chat button hidden for now — component untouched, just not rendered.
+// import { ChatButton } from "@/components/layout/ChatButton";
 
 export default function Home() {
   return (
@@ -43,8 +45,6 @@ export default function Home() {
 
           <RightNav />
         </div>
-
-        <ChatButton />
       </ActiveProjectProvider>
     </ActiveSectionProvider>
   );
