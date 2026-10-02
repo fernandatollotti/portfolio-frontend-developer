@@ -1,0 +1,16 @@
+// Cloudflare Worker serving the static export in ./out (no server code).
+// workers_dev/preview_urls are off so the site only exists on the custom domain.
+{
+  "name": "portfolio-frontend-developer",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "404-page"
+  },
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    { "pattern": "fernandatollotti.com.br", "custom_domain": true },
+    { "pattern": "www.fernandatollotti.com.br", "custom_domain": true }
+  ]
+}

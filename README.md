@@ -100,29 +100,25 @@ npm run build
 npx serve out
 ```
 
-## Deploy (Cloudflare Pages)
+## Deploy (Cloudflare Workers)
 
-Configuração (uma vez só) em **Workers & Pages → Create → Pages → Connect to Git**, escolhendo
-este repositório:
+O site é um Cloudflare Worker só com arquivos estáticos (sem código de servidor), configurado em
+`wrangler.jsonc`:
 
-| Campo | Valor |
-|---|---|
-| Production branch | `master` |
-| Build command | `npm run build` |
-| Build output directory | `out` |
+- `assets.directory: ./out` — publica o export estático.
+- `not_found_handling: 404-page` — endereços inexistentes mostram o `404.html`.
+- `workers_dev: false` e `preview_urls: false` — o site **só** existe no domínio próprio (não há
+  endereço `*.workers.dev` duplicado para o Google indexar).
+- `routes` com `custom_domain: true` — liga `fernandatollotti.com.br` e `www` ao Worker; o
+  Cloudflare cria os registros DNS no deploy.
 
-Variáveis de ambiente (Settings → Variables and secrets):
+Configuração (uma vez só) em **Workers & Pages → Create → Import a repository**, escolhendo este
+repositório, com Build command `npm run build` e Deploy command `npx wrangler deploy` (padrão).
+Depois disso, todo push na `master` publica sozinho. A versão do Node vem do `.nvmrc`; o endereço
+do site já tem padrão `https://fernandatollotti.com.br` (`src/lib/site.ts`), então não há variáveis
+de ambiente obrigatórias.
 
-| Variável | Valor |
-|---|---|
-| `NEXT_PUBLIC_SITE_URL` | `https://fernandatollotti.com.br` |
-| `GOOGLE_SITE_VERIFICATION` | opcional — com propriedade de Domínio no Search Console não é necessário |
-
-A versão do Node vem do `.nvmrc`. Depois disso, todo push na `master` publica sozinho.
-
-- **Headers de segurança e cache**: `public/_headers` (formato do Cloudflare Pages).
-- **Domínio**: em **Custom domains**, adicione `fernandatollotti.com.br` e `www`. Para mandar o
-  `www` para o domínio principal, use **Rules → Redirect Rules** (modelo "Redirect from WWW to
-  root").
+- **Headers de segurança e cache**: `public/_headers`.
+- **www → domínio principal**: **Rules → Redirect Rules** (modelo "Redirect from WWW to root").
 - **Rocket Loader** (Speed → Optimization) deve ficar **desligado** — ele reescreve os scripts da
   página e quebra a hidratação do React/Next.js.
