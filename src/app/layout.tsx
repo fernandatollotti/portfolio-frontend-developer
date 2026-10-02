@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
 import { profile } from "@/data/profile";
 import { CookieConsent } from "@/components/CookieConsent";
+import { siteUrl, ogImage } from "@/lib/site";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -15,8 +16,6 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
 });
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -36,13 +35,13 @@ export const metadata: Metadata = {
     title: profile.seoTitle,
     description: profile.seoDescription,
     siteName: profile.name,
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: profile.seoTitle }],
+    images: [ogImage],
   },
   twitter: {
     card: "summary_large_image",
     title: profile.seoTitle,
     description: profile.seoDescription,
-    images: ["/opengraph-image"],
+    images: [ogImage.url],
   },
   robots: {
     index: true,
@@ -67,10 +66,20 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     jobTitle: profile.role,
     description: profile.seoDescription,
     url: siteUrl,
-    image: `${siteUrl}/opengraph-image`,
+    image: `${siteUrl}/images/avatar.webp`,
     email: profile.email,
-    address: { "@type": "PostalAddress", addressLocality: profile.location },
-    knowsAbout: ["React", "Next.js", "TypeScript", "WordPress", "Desenvolvimento Front-end"],
+    address: { "@type": "PostalAddress", addressCountry: "BR" },
+    knowsAbout: [
+      "Desenvolvimento Front-end",
+      "Web Design",
+      "Sites institucionais",
+      "Landing pages",
+      "SEO",
+      "Acessibilidade web",
+      "React",
+      "Next.js",
+      "WordPress",
+    ],
     sameAs: profile.socials
       .filter((social) => social.href.startsWith("http"))
       .map((social) => social.href),

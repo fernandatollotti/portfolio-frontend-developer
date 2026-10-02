@@ -3,10 +3,34 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { profile } from "@/data/profile";
 import { Container } from "@/components/ui/Container";
+import { siteUrl, ogImage } from "@/lib/site";
 
+const title = "Política de Privacidade";
+const description = `Política de Privacidade do site de ${profile.name}: quais dados são coletados, como são usados e como exercer seus direitos sob a LGPD.`;
+const url = `${siteUrl}/politica-de-privacidade`;
+
+// openGraph/twitter are redeclared in full: child metadata replaces these
+// objects from the root layout instead of merging, so the home's url/title
+// (and canonical) would otherwise leak into this page.
 export const metadata: Metadata = {
-  title: "Política de Privacidade",
-  description: `Política de Privacidade do site de ${profile.name}: quais dados são coletados, como são usados e como exercer seus direitos sob a LGPD.`,
+  title,
+  description,
+  alternates: { canonical: url },
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    url,
+    title: `${title} — ${profile.name}`,
+    description,
+    siteName: profile.name,
+    images: [ogImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${title} — ${profile.name}`,
+    description,
+    images: [ogImage.url],
+  },
 };
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {

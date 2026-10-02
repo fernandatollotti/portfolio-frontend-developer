@@ -39,7 +39,11 @@ export function Projects() {
                   {/* eslint-disable-next-line @next/next/no-img-element -- local static asset, no optimization needed */}
                   <img
                     src={withBasePath(project.image)}
-                    alt={`Prévia do projeto ${project.name}`}
+                    alt={project.imageAlt}
+                    width={1060}
+                    height={604}
+                    loading="lazy"
+                    decoding="async"
                     className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                   />
                 </div>

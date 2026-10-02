@@ -29,6 +29,9 @@ export function Sidebar() {
           <img
             src={withBasePath("/images/avatar.webp")}
             alt={`Foto de perfil de ${profile.name}`}
+            width={1086}
+            height={1448}
+            fetchPriority="high"
             className="absolute inset-0 h-full w-full object-cover"
           />
           <div
@@ -53,7 +56,7 @@ export function Sidebar() {
 
           <div className="absolute inset-x-6 bottom-6">
             <p className="text-sm text-text-secondary">Olá, eu sou</p>
-            <h1 className="mt-1 font-heading text-2xl font-semibold text-text">{profile.name}</h1>
+            <p className="mt-1 font-heading text-2xl font-semibold text-text">{profile.name}</p>
             <p className="mt-1 text-sm font-medium text-accent">
               {profile.role.split(" & ").map((part, i) => (
                 <span key={part} className="whitespace-nowrap">
@@ -112,7 +115,7 @@ export function Sidebar() {
               {/* eslint-disable-next-line @next/next/no-img-element -- local static asset, no optimization needed */}
               <img
                 src={withBasePath(activeProject.image)}
-                alt={`Prévia do projeto ${activeProject.name}`}
+                alt=""
                 className="absolute inset-0 h-full w-full object-cover object-top"
               />
               <div aria-hidden="true" className="absolute inset-0 bg-black/40 backdrop-blur-md" />

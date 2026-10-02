@@ -71,6 +71,7 @@ export interface Project {
   year: string;
   description: string;
   image: string;
+  imageAlt: string;
   href?: string;
   featured?: boolean;
 }

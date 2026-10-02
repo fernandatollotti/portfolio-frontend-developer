@@ -1,12 +1,14 @@
 import { ImageResponse } from "next/og";
 import { profile } from "@/data/profile";
 
-export const alt = profile.seoTitle;
-export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
+// A route named *.png (instead of the opengraph-image convention) so the static
+// export emits a file with an extension — GitHub Pages serves extensionless files
+// as application/octet-stream, which social networks reject as a preview image.
 export const dynamic = "force-static";
 
-export default function OpengraphImage() {
+const size = { width: 1200, height: 630 };
+
+export function GET() {
   return new ImageResponse(
     (
       <div
