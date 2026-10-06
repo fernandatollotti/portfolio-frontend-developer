@@ -48,6 +48,9 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true },
   },
+  icons: {
+    apple: "/apple-touch-icon.png",
+  },
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION,
   },
@@ -59,9 +62,10 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
-  const jsonLd = {
-    "@context": "https://schema.org",
+  const personId = `${siteUrl}/#person`;
+  const person = {
     "@type": "Person",
+    "@id": personId,
     name: profile.name,
     jobTitle: profile.role,
     description: profile.seoDescription,
@@ -84,6 +88,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       .filter((social) => social.href.startsWith("http"))
       .map((social) => social.href),
   };
+  // WebSite.name is what Google uses as the site name shown above search results.
+  const website = {
+    "@type": "WebSite",
+    "@id": `${siteUrl}/#website`,
+    url: siteUrl,
+    name: profile.name,
+    alternateName: new URL(siteUrl).hostname,
+    inLanguage: "pt-BR",
+    publisher: { "@id": personId },
+  };
+  const jsonLd = { "@context": "https://schema.org", "@graph": [website, person] };
 
   return (
     <html

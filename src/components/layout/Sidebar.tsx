@@ -24,15 +24,19 @@ export function Sidebar() {
             activeProject ? "pointer-events-none opacity-0" : "opacity-100"
           )}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element -- local static asset, no optimization needed */}
-          <img
-            src="/images/avatar.webp"
-            alt={`Foto de perfil de ${profile.name}`}
-            width={1086}
-            height={1448}
-            fetchPriority="high"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
+          {/* The sidebar is hidden below lg, but a hidden <img> still downloads — the
+              <source> limits the real photo to desktop; mobile gets a 1px placeholder. */}
+          <picture>
+            <source media="(min-width: 1024px)" srcSet="/images/avatar.webp" />
+            <img
+              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+              alt={`Foto de perfil de ${profile.name}`}
+              width={720}
+              height={960}
+              fetchPriority="high"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          </picture>
           <div
             aria-hidden="true"
             className="absolute inset-0 bg-gradient-to-t from-bg from-15% via-bg/40 via-55% to-transparent"

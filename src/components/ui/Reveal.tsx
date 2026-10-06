@@ -21,6 +21,10 @@ export function Reveal({ children, className, delay = 0, as = "div" }: RevealPro
     const node = ref.current;
     if (!node) return;
 
+    // Already on screen at load (e.g. the hero): leave it as rendered. Hiding it to
+    // fade it back in would delay Largest Contentful Paint.
+    if (node.getBoundingClientRect().top < window.innerHeight) return;
+
     setArmed(true);
 
     const observer = new IntersectionObserver(
