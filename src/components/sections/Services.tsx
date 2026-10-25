@@ -1,4 +1,4 @@
-import { Code2, Globe, LayoutTemplate, ShieldCheck, Wrench, type LucideIcon } from "lucide-react";
+import { Code2, Globe, LayoutTemplate, RefreshCw, ShieldCheck, Wrench, type LucideIcon } from "lucide-react";
 import { services } from "@/data/services";
 import { Service } from "@/types";
 import { SectionTitle } from "@/components/ui/SectionTitle";
@@ -12,6 +12,7 @@ const iconMap: Record<Service["icon"], LucideIcon> = {
   wordpress: Globe,
   wrench: Wrench,
   check: ShieldCheck,
+  refresh: RefreshCw,
 };
 
 export function Services() {
