@@ -2,30 +2,30 @@ import { Service } from "@/types";
 
 export const services: Service[] = [
   {
-    id: "sites",
+    id: "criacao",
     number: "01",
-    title: "Criação de sites profissionais",
+    title: "Criação de sites",
     description:
-      "Site institucional ou landing page do layout à publicação — rápido, responsivo e pronto para aparecer no Google. Em WordPress, para você editar sozinho, ou em código sob medida.",
-    idealFor: "Empresas e profissionais que precisam de presença online",
+      "Sites institucionais e landing pages do zero, do layout à publicação. Desenvolvimento Front-end com React e Next.js ou em WordPress, para você editar o conteúdo sozinho.",
+    idealFor: "Empresas e profissionais que ainda não têm site",
     icon: "layout",
   },
   {
-    id: "frontend",
+    id: "recriacao",
     number: "02",
-    title: "Desenvolvimento Front-end",
+    title: "Recriação de sites",
     description:
-      "Transformo layouts do Figma em interfaces e aplicações web com React, Next.js e TypeScript, integradas à sua API e prontas para produção.",
-    idealFor: "Agências, startups e times de produto",
-    icon: "code",
+      "Redesign e reconstrução de sites desatualizados ou lentos: visual novo, código moderno, mais performance e SEO, preservando o conteúdo e cuidando dos redirecionamentos para não perder posições no Google.",
+    idealFor: "Quem tem um site antigo, lento ou difícil de atualizar",
+    icon: "refresh",
   },
   {
     id: "manutencao",
     number: "03",
-    title: "Manutenção e melhorias",
+    title: "Manutenção e evolução",
     description:
-      "Correções, atualizações, novas seções e ganhos de performance e SEO em sites que já estão no ar, incluindo manutenção de sites WordPress.",
-    idealFor: "Quem já tem site e precisa de suporte contínuo",
+      "Correções, atualizações, novas páginas e funcionalidades em sites que já estão no ar, incluindo manutenção de sites WordPress.",
+    idealFor: "Quem precisa de suporte contínuo para o site",
     icon: "wrench",
   },
   {
