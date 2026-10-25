@@ -1,10 +1,10 @@
 import { profile } from "@/data/profile";
 import { SocialIcon } from "@/components/ui/SocialIcon";
 
-export function MobileMenu() {
+export function MobileMenu({ homeHref = "#home" }: { homeHref?: string } = {}) {
   return (
     <header className="fixed inset-x-0 top-0 z-40 flex items-center justify-between border-b border-border bg-bg/90 px-6 py-4 backdrop-blur lg:hidden">
-      <a href="#home" className="font-heading text-base font-semibold text-text">
+      <a href={homeHref} className="font-heading text-base font-semibold text-text">
         {profile.name}
       </a>
 
