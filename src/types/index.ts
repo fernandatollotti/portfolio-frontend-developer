@@ -81,7 +81,7 @@ export interface Service {
   number: string;
   title: string;
   description: string;
-  icon: "code" | "globe" | "layout" | "wordpress" | "wrench";
+  icon: "code" | "globe" | "layout" | "wordpress" | "wrench" | "check";
 }
 
 export interface ProcessStep {
