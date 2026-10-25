@@ -28,7 +28,7 @@ export const profile: Profile = {
     "Meu trabalho se apoia em quatro pilares: performance, acessibilidade, responsividade e SEO. Cada projeto é pensado para carregar rápido, funcionar bem em qualquer dispositivo, ser acessível a todas as pessoas e ser encontrado nos mecanismos de busca.",
     "A experiência com gestão de projetos digitais ampliou minha visão além do código. Sei conduzir a comunicação entre clientes e equipes técnicas, organizar prioridades e garantir que a entrega final atenda ao objetivo do negócio.",  ],
   location: "Brasil",
-  whatsapp: `https://wa.me/551151040817?text=${encodeURIComponent(
+  whatsapp: `https://wa.me/5511951040817?text=${encodeURIComponent(
     "Olá, Fernanda! Vi seu portfólio e gostaria de conversar sobre um projeto."
   )}`,
   email: "contato@fernandatollotti.com.br",
