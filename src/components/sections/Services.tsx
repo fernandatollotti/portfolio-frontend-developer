@@ -44,7 +44,6 @@ export function Services() {
               )}
             >
               <div className="flex items-start justify-between">
-                <span className="font-heading text-sm text-text-muted">{service.number}</span>
                 <Icon className="h-5 w-5 text-accent" aria-hidden="true" strokeWidth={1.75} />
               </div>
               <h3 className="mt-6 font-heading text-lg font-semibold text-text">
