@@ -5,8 +5,16 @@ import { navIconMap } from "@/components/layout/navIcons";
 import { useActiveSectionContext } from "@/components/layout/ActiveSectionProvider";
 import { cn } from "@/lib/utils";
 
-export function RightNav() {
-  const activeId = useActiveSectionContext();
+/**
+ * `hrefPrefix` lets pages outside the home (e.g. "/") link back to the home sections;
+ * `activeId` pins the highlighted item where there is no scroll-spy.
+ */
+export function RightNav({
+  hrefPrefix = "",
+  activeId: pinnedId,
+}: { hrefPrefix?: string; activeId?: string } = {}) {
+  const sectionId = useActiveSectionContext();
+  const activeId = pinnedId ?? sectionId;
 
   return (
     <nav
@@ -20,7 +28,7 @@ export function RightNav() {
           return (
             <li key={item.id} className="group relative">
               <a
-                href={`#${item.id}`}
+                href={`${hrefPrefix}#${item.id}`}
                 aria-label={item.label}
                 aria-current={isActive ? "true" : undefined}
                 className={cn(
