@@ -49,6 +49,11 @@ export function Services() {
               <p className="mt-2 text-sm leading-relaxed text-text-secondary">
                 {service.description}
               </p>
+              {service.idealFor && (
+                <p className="mt-4 text-xs text-text-muted">
+                  <span className="font-semibold text-accent">Ideal para:</span> {service.idealFor}
+                </p>
+              )}
             </Reveal>
           );
         })}
