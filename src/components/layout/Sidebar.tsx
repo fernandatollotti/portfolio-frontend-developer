@@ -68,6 +68,10 @@ export function Sidebar() {
                 </span>
               ))}
             </p>
+            <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent-dim px-2.5 py-1 text-[11px] font-semibold tracking-wide text-accent uppercase">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
+              Disponível para freelance
+            </p>
 
             <p className="mt-3 text-sm leading-relaxed text-text-secondary">
               {profile.heroDescription}
