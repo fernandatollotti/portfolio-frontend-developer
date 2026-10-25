@@ -8,20 +8,20 @@ export const profile: Profile = {
   heroHeadline: "Interfaces web rápidas, acessíveis e pensadas para gerar resultados",
   heroDescription:
     "Como desenvolvedora Front-end e Web Designer, crio sites institucionais e aplicações web que unem performance, SEO e uma boa experiência para quem acessa — do layout à publicação.",
-  seoTitle: "Fernanda Tollotti | Front-end Developer & Web Designer",
+  seoTitle: "Fernanda Tollotti | Desenvolvedora Front-end",
   seoDescription:
-    "Desenvolvedora Front-end e Web Designer. Criação de sites institucionais e landing pages rápidos, responsivos, acessíveis e otimizados para o Google.",
+    "Desenvolvedora Front-end especializada em interfaces web, React, JavaScript e WordPress. Conheça meus projetos e soluções com foco em performance, acessibilidade e SEO.",
   keywords: [
     "Desenvolvedora Front-end",
-    "Web Designer",
-    "Criação de landing pages",
-    "Criação de sites institucionais",
-    "Desenvolvimento WordPress",
+    "Desenvolvimento Front-end",
+    "Desenvolvedora WordPress",
+    "Criação de sites profissionais",
+    "Manutenção de sites WordPress",
     "Front-end Developer",
     "React",
+    "JavaScript",
     "Next.js",
     "TypeScript",
-    "Sites institucionais",
   ],
   bio: [
     "Desenvolvedora Front-end e Web Designer com mais de 3 anos de experiência na criação de sites institucionais e landing pages. Participo de todas as etapas do projeto, da concepção visual da interface até a publicação, com atenção à qualidade técnica e à experiência de quem vai usar o produto.",
