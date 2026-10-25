@@ -22,8 +22,12 @@ export function Hero() {
       />
 
       <Reveal>
-        <p className="mb-6 font-heading text-xs font-semibold tracking-[0.25em] text-accent uppercase">
-          {profile.tagline}
+        <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent-dim px-3 py-1.5 font-heading text-xs font-semibold tracking-[0.15em] text-accent uppercase">
+          <span className="relative flex h-2 w-2" aria-hidden="true">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+          </span>
+          Disponível para <span className="hidden sm:inline">projetos</span> freelance
         </p>
       </Reveal>
 
