@@ -105,3 +105,20 @@ export interface Testimonial {
   company: string;
   text: string;
 }
+
+export interface ServicePage {
+  /** `id` of the matching entry in services.ts. */
+  serviceId: string;
+  slug: string;
+  seoTitle: string;
+  seoDescription: string;
+  eyebrow: string;
+  headline: string;
+  intro: string[];
+  includedTitle: string;
+  included: { title: string; text: string }[];
+  forWhom: string[];
+  /** Ids from projects.ts shown as examples; empty hides the section. */
+  projectIds: string[];
+  faq: { question: string; answer: string }[];
+}
