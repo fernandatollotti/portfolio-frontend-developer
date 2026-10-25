@@ -11,7 +11,7 @@ export const servicePages: ServicePage[] = [
     seoTitle: "Criação de Sites Profissionais",
     seoDescription:
       "Criação de sites institucionais e landing pages rápidos, responsivos e otimizados para o Google. Desenvolvimento Front-end com React, Next.js ou WordPress.",
-    eyebrow: "Serviço 01",
+    eyebrow: "Serviços",
     headline: "Criação de sites profissionais, do layout à publicação",
     intro: [
       "Um site é, muitas vezes, o primeiro contato de um cliente com a sua empresa. Por isso, ele precisa carregar rápido, funcionar bem no celular, transmitir confiança e ser encontrado no Google.",
@@ -79,7 +79,7 @@ export const servicePages: ServicePage[] = [
     seoTitle: "Recriação e Redesign de Sites",
     seoDescription:
       "Redesign e reconstrução de sites antigos ou lentos: visual novo, código moderno, mais performance e SEO, sem perder o conteúdo e as posições no Google.",
-    eyebrow: "Serviço 02",
+    eyebrow: "Serviços",
     headline: "Recriação de sites: visual novo, código moderno e mais resultado",
     intro: [
       "Sites antigos costumam ser lentos, difíceis de atualizar e pouco adaptados ao celular, e isso afasta visitantes e prejudica o posicionamento no Google.",
@@ -146,7 +146,7 @@ export const servicePages: ServicePage[] = [
     seoTitle: "Manutenção de Sites WordPress e Next.js",
     seoDescription:
       "Manutenção e evolução de sites WordPress e Next.js: atualizações, correções de bugs, novas páginas e melhorias de performance e SEO.",
-    eyebrow: "Serviço 03",
+    eyebrow: "Serviços",
     headline: "Manutenção e evolução de sites que já estão no ar",
     intro: [
       "Um site publicado precisa de cuidado contínuo: atualizações de segurança, correções, ajustes de conteúdo e melhorias que acompanham o crescimento do negócio.",
@@ -209,7 +209,7 @@ export const servicePages: ServicePage[] = [
     seoTitle: "QA e Testes de Interface para Sites e Aplicações Web",
     seoDescription:
       "Testes funcionais, de responsividade, entre navegadores e de acessibilidade para sites e aplicações web, com relatório de bugs e validação das correções.",
-    eyebrow: "Serviço 04",
+    eyebrow: "Serviços",
     headline: "QA e testes de interface antes de lançar",
     intro: [
       "Um bug encontrado pelo cliente custa muito mais caro do que um bug encontrado antes do lançamento. Formulários que não enviam, botões que não funcionam no celular e layouts quebrados em um navegador específico afetam a confiança e a conversão.",
