@@ -3,11 +3,11 @@ import { Profile } from "@/types";
 /** Real name, photo, email and social links are all set. */
 export const profile: Profile = {
   name: "Fernanda Tollotti",
-  role: "Front-end Developer & Web Designer",
-  tagline: "Front-end Developer & Web Designer",
-  heroHeadline: "Interfaces web rápidas, acessíveis e pensadas para gerar resultados",
+  role: "Desenvolvedora Front-end",
+  tagline: "Desenvolvedora Front-end",
+  heroHeadline: "Desenvolvedora Front-end especializada em experiências web",
   heroDescription:
-    "Como desenvolvedora Front-end e Web Designer, crio sites institucionais e aplicações web que unem performance, SEO e uma boa experiência para quem acessa — do layout à publicação.",
+    "Desenvolvo interfaces responsivas e aplicações web com foco em qualidade técnica, performance, acessibilidade e experiência do usuário.",
   seoTitle: "Fernanda Tollotti | Desenvolvedora Front-end",
   seoDescription:
     "Desenvolvedora Front-end especializada em interfaces web, React, JavaScript e WordPress. Conheça meus projetos e soluções com foco em performance, acessibilidade e SEO.",
@@ -24,7 +24,7 @@ export const profile: Profile = {
     "TypeScript",
   ],
   bio: [
-    "Desenvolvedora Front-end e Web Designer com mais de 3 anos de experiência na criação de sites institucionais e landing pages. Participo de todas as etapas do projeto, da concepção visual da interface até a publicação, com atenção à qualidade técnica e à experiência de quem vai usar o produto.",
+    "Desenvolvedora Front-end com mais de 3 anos de experiência no desenvolvimento de interfaces, aplicações web e sites profissionais, com React, Next.js, JavaScript e WordPress. Participo de todas as etapas do projeto, da concepção visual da interface até a publicação, com atenção à qualidade técnica e à experiência de quem vai usar o produto.",
     "Meu trabalho se apoia em quatro pilares: performance, acessibilidade, responsividade e SEO. Cada projeto é pensado para carregar rápido, funcionar bem em qualquer dispositivo, ser acessível a todas as pessoas e ser encontrado nos mecanismos de busca.",
     "A experiência com gestão de projetos digitais ampliou minha visão além do código. Sei conduzir a comunicação entre clientes e equipes técnicas, organizar prioridades e garantir que a entrega final atenda ao objetivo do negócio.",  ],
   location: "Brasil",
