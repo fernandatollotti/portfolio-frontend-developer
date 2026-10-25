@@ -1,8 +1,9 @@
-import { Code2, Globe, LayoutTemplate, Wrench, type LucideIcon } from "lucide-react";
+import { Code2, Globe, LayoutTemplate, ShieldCheck, Wrench, type LucideIcon } from "lucide-react";
 import { services } from "@/data/services";
 import { Service } from "@/types";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Reveal } from "@/components/ui/Reveal";
+import { cn } from "@/lib/utils";
 
 const iconMap: Record<Service["icon"], LucideIcon> = {
   code: Code2,
@@ -10,6 +11,7 @@ const iconMap: Record<Service["icon"], LucideIcon> = {
   layout: LayoutTemplate,
   wordpress: Globe,
   wrench: Wrench,
+  check: ShieldCheck,
 };
 
 export function Services() {
@@ -27,7 +29,16 @@ export function Services() {
         {services.map((service, index) => {
           const Icon = iconMap[service.icon];
           return (
-            <Reveal key={service.id} as="li" delay={index * 60} className="bg-bg-secondary p-8">
+            <Reveal
+              key={service.id}
+              as="li"
+              delay={index * 60}
+              className={cn(
+                "bg-bg-secondary p-8",
+                // Odd count: the last card spans both columns so the grid has no gap.
+                services.length % 2 === 1 && index === services.length - 1 && "sm:col-span-2"
+              )}
+            >
               <div className="flex items-start justify-between">
                 <span className="font-heading text-sm text-text-muted">{service.number}</span>
                 <Icon className="h-5 w-5 text-accent" aria-hidden="true" strokeWidth={1.75} />
