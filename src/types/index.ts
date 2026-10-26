@@ -122,3 +122,12 @@ export interface ServicePage {
   projectIds: string[];
   faq: { question: string; answer: string }[];
 }
+
+export interface Problem {
+  id: string;
+  title: string;
+  description: string;
+  icon: "mobile" | "performance" | "redesign" | "maintenance";
+  /** Service page that solves this problem. */
+  href?: string;
+}
