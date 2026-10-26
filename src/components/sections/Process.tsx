@@ -21,9 +21,7 @@ export function Process() {
             delay={index * 80}
             className="flex gap-6 border-t border-border py-6 first:border-t-0 sm:gap-10"
           >
-            <span className="w-10 shrink-0 font-heading text-2xl font-semibold text-accent">
-              {step.number}
-            </span>
+            <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
             <div>
               <h3 className="font-heading text-base font-semibold text-text">{step.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-text-secondary">
