@@ -243,10 +243,11 @@ export default async function ServicePage({
               <ol className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-5">
                 {processSteps.map((step) => (
                   <li key={step.id}>
-                    <span className="font-heading text-sm text-accent">
-                      {step.number}
-                    </span>
-                    <h3 className="mt-2 font-heading text-base font-semibold text-text">
+                    <span
+                      className="block h-1.5 w-8 rounded-full bg-accent"
+                      aria-hidden="true"
+                    />
+                    <h3 className="mt-3 font-heading text-base font-semibold text-text">
                       {step.title}
                     </h3>
                     <p className="mt-1 text-sm leading-relaxed text-text-secondary">
