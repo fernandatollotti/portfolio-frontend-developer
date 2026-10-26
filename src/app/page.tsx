@@ -10,6 +10,7 @@ import { About } from "@/components/sections/About";
 import { Experience } from "@/components/sections/Experience";
 import { Projects } from "@/components/sections/Projects";
 import { Services } from "@/components/sections/Services";
+import { Problems } from "@/components/sections/Problems";
 import { Process } from "@/components/sections/Process";
 import { Technologies } from "@/components/sections/Technologies";
 
@@ -36,6 +37,7 @@ export default function Home() {
               <About />
               <Experience />
               <Projects />
+              <Problems />
               <Services />
               <Process />
               <Technologies />
