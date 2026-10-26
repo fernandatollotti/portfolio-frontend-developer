@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { ArrowRight, Gauge, Paintbrush, Smartphone, Wrench, type LucideIcon } from "lucide-react";
+import { Gauge, Paintbrush, Smartphone, Wrench, type LucideIcon } from "lucide-react";
 import { problems } from "@/data/problems";
 import { Problem } from "@/types";
 import { SectionTitle } from "@/components/ui/SectionTitle";
@@ -46,16 +45,6 @@ export function Problems() {
                 <p className="mt-1 text-sm leading-relaxed text-text-secondary">
                   {problem.description}
                 </p>
-                {problem.href && (
-                  <Link
-                    href={problem.href}
-                    className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent/80"
-                    aria-label={`Como resolvo: ${problem.title}`}
-                  >
-                    Como resolvo
-                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                  </Link>
-                )}
               </div>
             </Reveal>
           );
